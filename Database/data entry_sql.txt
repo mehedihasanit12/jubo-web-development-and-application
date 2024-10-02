@@ -1,0 +1,16 @@
+insert into person values(2, 'Rahima Begum', 4000,3);
+insert into person values(3, 'Sumaya Bashir', 4000,2);
+insert into person values(4, 'Abdul Halim', 4000,1);
+insert into person values(5, 'Abdul Hakim', 4000,4);
+
+
+select * from person;
+select pname,income from person;
+select pname,income+200 as total from person;
+select pname,income+200 as 'Total Income' from person;
+select pname,income,income+200 as 'Total Income' from person;
+select pname,income,income*0.1 as Tax from person;
+
+select pname,income from person where income>3000
+
+select pname,income from person where pname like 'A%'; 

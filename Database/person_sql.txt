@@ -1,0 +1,8 @@
+create table person (
+pid  int(3) primary key,
+pname varchar(60),
+income decimal(9,2),
+did int(3),
+foreign key (did)  references district(did)
+);
+

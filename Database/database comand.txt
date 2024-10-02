@@ -1,0 +1,8 @@
+create table district (
+did  int(3) primary key,
+dname varchar(30)
+);
+
+insert into district values (1, 'Dhaka');
+insert into district values (2, 'Rajshahi');
+insert into district values (3, 'Bhola');
