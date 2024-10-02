@@ -1,0 +1,11 @@
+Scan f()
+হোমওয়ার্ক
+ইউজার থেকে ইনপুট নিয়ে আয়তক্ষেত্রের ক্ষেত্রফল বের করা
+
+int height,width,area;
+    printf("Enter Your height: ");
+    scanf("%d",&height);
+    printf("Enter Your width: ");
+    scanf("%d",&width);
+    area= height*width;
+    printf("Your Area is = %d",area);
