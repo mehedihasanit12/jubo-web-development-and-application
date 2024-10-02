@@ -1,5 +1,3 @@
-# jubo-web-development-and-application
-
 # Jubo Web Development and Application
 
 Jubo is a web development project focused on creating dynamic, user-friendly web applications using modern technologies. This repository contains the source code, documentation, and resources needed for developing, testing, and deploying the application.
