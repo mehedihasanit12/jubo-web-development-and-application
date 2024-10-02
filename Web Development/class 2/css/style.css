@@ -1,0 +1,37 @@
+input{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+p {
+  font-size: 20px;
+}
+p,
+h1 {
+  text-align: center;
+}
+.test_table {
+  color: rgb(231, 81, 12);
+  border: rgb(53, 228, 18);
+  font-size: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.breaking_news {
+  font-weight: bold;
+  background-color: red;
+  font-size: large;
+}
+
+.news {
+  border: 1px solid green;
+  color: red;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 20px;
+  text-align: justify;
+  border-radius: 20px;
+  background-color: yellow;
+
+}
