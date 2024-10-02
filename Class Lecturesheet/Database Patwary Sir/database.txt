@@ -1,0 +1,25 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+Table employee {
+  empid integer
+  name varchar
+  deptid integer
+  projid integer
+}
+
+Table project {
+  projid integer [primary key]
+  projname varchar
+}
+
+Table dept {
+  deptid integer
+  dname varchar
+}
+
+Ref: employee.deptid > dept.deptid // many-to-one
+
+Ref: employee.projid < project.projid
+
+//Ref: users.id < follows.followed_user_id
