@@ -1,0 +1,49 @@
+SELECT * FROM person,district where person.did=district.did;
+SELECT person.pname,district.dname FROM person,district where person.did=district.did;
+select * from person NATURAL JOIN district
+SELECT person.pname,district.dname from person,district
+          WHERE person.did=district.did;
+
+
+SELECT person.pname,person.income,district.dname 
+       from person,district
+         WHERE person.did=district.did 
+         and district.dname="Dhaka";
+SELECT * FROM person WHERE did=1;
+
+
+select person.pname,person.income,
+district.dname
+from person,district
+where person.did=district.did
+and district.dname='Dhaka';
+
+select person.pname,person.income,
+district.dname
+from person,district
+where person.did=district.did
+and district.dname like 'Dhaka';
+
+select p.pname,p.income,
+d.dname
+from person p,district d
+where p.did=d.did
+and d.dname like 'Dhaka';
+
+
+SELECT person.pname,person.income 
+FROM person WHERE person.income>5000;
+
+SELECT * FROM person WHERE person.income>3000;
+
+SELECT * FROM person WHERE income>=3000 AND
+income<=5000;
+
+
+SELECT avg(income) FROM person;
+SELECT SUM(income) FROM person;
+SELECT STD(income) FROM person;
+SELECT STD(income) 'Standard Deviation' FROM person;
+SELECT avg(income) Avarage FROM person GROUP BY did;
+SELECT did, avg(income) Avarage FROM person GROUP BY did;
+SELECT did, avg(income) Avarage, COUNT(income) N FROM person GROUP BY did;
