@@ -1,0 +1,1 @@
+SELECT Customers.CustomerName,Orders.OrderID,Customers.CustomerID,Orders.CustomerID FROM Customers,Orders where Customers.CustomerID=Orders.CustomerID;
