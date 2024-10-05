@@ -1,1 +1,4 @@
 SELECT Customers.CustomerName,Orders.OrderID,Customers.CustomerID,Orders.CustomerID FROM Customers,Orders where Customers.CustomerID=Orders.CustomerID;
+
+
+select Orders.OrderID,Orders.CustomerID ,Customers.CustomerName from Orders, Customers where Orders.CustomerID =90 and Customers.CustomerID=90;
