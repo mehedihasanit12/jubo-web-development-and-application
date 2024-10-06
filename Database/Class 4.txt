@@ -1,0 +1,93 @@
+06/10/2024
+11:40AM
+4:00PM
+
+
+select count(*) n from person;
+select sum(income) Total,
+       avg(income) Average,
+       count(income) N
+       from person;
+
+
+#list statistics by district
+
+
+select sum(income) Total,
+       avg(income) Average,
+       count(income) N
+       from person
+       group by did;
+
+select did,sum(income) Total,
+       avg(income) Average,
+       count(income) N
+       from person
+       group by did;
+
+#list statistics for district Dhaka=1;
+
+select did,sum(income) Total,
+       avg(income) Average,
+       count(income) N
+       from person
+       where did=1
+       group by did;
+
+#cross product
+
+select * from person,district;
+
+#cross product then Natural Joint;
+
+select * from person,district 
+where person.did=district.did;
+
+#list statistics by district name;
+
+select dname,sum(income) Total,
+       avg(income) Average,
+       count(income) N
+       from person,district 
+       where person.did=district.did
+       group by person.did;
+
+# id Number of Dhaka district;
+
+select did from district where dname like 'Dhaka';
+
+# list who are from district 1;
+
+select pname from person where did=1;
+
+# list who are from district Dhaka (sub-query,natural join);
+
+SELECT pname 
+FROM person 
+WHERE did = (
+    SELECT did 
+    FROM district 
+    WHERE dname LIKE 'Dhaka'
+);
+
+select pname from person,district 
+where person.did=district.did 
+ and dname like 'Dhaka';
+
+
+# How to send data from a table to another table;
+
+select * from person where pid=5;
+insert into emp values('5','Rozy Akter',8000,3);
+insert into emp (select * from person where pid=5);
+insert into emp (select * from person);
+insert into emp (select pid,pname,'0',did from person where pid=1);
+
+select now();
+select current_date();
+select 3000;
+select current_date-date('1998-08-25');
+select datediff(current_date,date('1998-08-25'));
+select datediff(current_date,date('1998-08-25'))/365;
+
+
