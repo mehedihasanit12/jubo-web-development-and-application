@@ -1,0 +1,24 @@
+.para1{
+    width: 200px;
+    background-color: mediumaquamarine;
+    padding: 10px;
+    border: 1px solid tomato;
+    display: inline-block;
+}
+
+.para2{
+    width: 200px;
+    background-color: mediumaquamarine;
+    padding: 10px;
+    border: 1px solid tomato;
+    display: inline-block;
+}
+
+.para3{
+    width: 426px;
+    background-color: mediumaquamarine;
+    padding: 10px;
+    text-align: justify;
+    border: 1px solid tomato;
+    
+}
