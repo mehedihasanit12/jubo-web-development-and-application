@@ -1,0 +1,31 @@
+.header {
+  background-color: #bfbfbf;
+  padding: 6px;
+}
+
+.header h1 {
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.menu {
+  background-color: #64c7a3;
+  padding: 10px;
+  text-align: center;
+}
+
+.menu a {
+  display: inline-block;
+  color: black;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 18px;
+
+}
+
+.menu a:hover {
+  background-color: #4caf50;
+  color: white;
+  border-radius: 4px;
+}
