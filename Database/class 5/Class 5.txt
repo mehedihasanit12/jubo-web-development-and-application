@@ -1,0 +1,76 @@
+Mid term exam
+
+ইনস্টিটিউট ৫ টি শট কোর্স চালু করেছে। ফাইনাল পরিক্ষায় ৫০ এর অধিক নম্বর পেলে পাস। এক ব্যাচ হবে
+
+১. কি কি কোর্স চলছে।
+২.কোর্স ভিত্তিক কোন কোন ছাত্র পাশ/ফেল করছে 
+৩. মেধা অনুযায়ী লিস্ট আসবে।
+
+প্রশ্ন:  
+    ১.ডেটাবেজ ডিজাইন (স্কিমা ডায়াগ্রাম দিয়ে)
+    ২.Table তৈরি কর।
+    ৩. ডাটা এন্ট্রি
+    ৪. কোর্স ভিত্তিক লিস্ট।
+
+create database mid;
+
+create table course(
+c_id int(6) primary key,
+cname varchar(30)
+);
+
+
+
+create table student(
+s_id int(4) primary key,
+name varchar(50),
+c_id int(6),
+mark decimal (5,2),
+foreign key (c_id) references course(c_id)
+
+);
+
+
+insert into course values (1,'Graphics'),
+                          (2,'Ecommers');
+insert into course values (3,'Web application'),
+                          (4,'Hotel tourism'),
+                          (5,'English');
+
+insert into student values (1,'Rakib',1,60),
+                           (2,'Shakib',2,70),
+                           (3,'Adib',1,30),
+                           (4,'Aslam',2,40),
+                           (5,'Osman',1,30);
+
+select cname from course;
+
+select c_id from course where cname like 'Graphics'
+
+select name,mark from student
+                  where c_id=1;
+
+
+select name,mark from student
+                  where c_id=(select c_id from course where cname like 'Graphics');
+
+
+select name,mark from student
+                  where c_id=(select c_id from course where cname like 'Graphics')
+                  order by mark desc;
+
+
+select name,mark from student
+                  where c_id=(select c_id from course where cname like 'Graphics')
+                  order by mark desc;
+
+
+select name,mark, 'Pass' st from student;
+
+
+select name,mark, 
+            IF(mark<50,'Fail','Pass') result
+            from student;
+
+
+
