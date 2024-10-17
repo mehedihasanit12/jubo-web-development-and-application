@@ -1,0 +1,65 @@
+.menu {
+  background-color: aquamarine;
+  text-align: center;
+}
+
+.menu ul li {
+  display: inline-block;
+  list-style: none;
+  padding: 20px;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  padding: 20px;
+}
+
+.menu ul li :hover {
+  background-color: rgb(131, 63, 187);
+  border-radius: 5px;
+  color: white;
+}
+
+.section {
+  /* display: flex; */
+}
+
+.div1 {
+  float: left;
+  width: 33%;
+  background-color: aquamarine;
+  border: 1px solid tomato;
+}
+
+.div2 {
+  float: left;
+  width: 33%;
+  background-color: blueviolet;
+  border: 1px solid tomato;
+}
+
+.div3 {
+  float: left;
+  width: 33%;
+  background-color: rgb(13, 160, 25);
+  border: 1px solid tomato;
+}
+
+@media screen and (max-width: 450px) {
+  .menu ul li {
+    display: block;
+  }
+
+  .div1 {
+    width: 100%;
+    background-color: blue;
+  }
+  .div2 {
+    width: 100%;
+    background-color: cadetblue;
+  }
+  .div3 {
+    width: 100%;
+    background-color: chocolate;
+  }
+}

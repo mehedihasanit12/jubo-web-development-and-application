@@ -1,0 +1,28 @@
+.menu{
+    background-color: aquamarine;
+    text-align: center;
+}
+
+.menu ul li{
+    display: inline-block;
+    list-style: none;
+    padding: 20px;
+}
+
+.menu ul li a{
+    text-decoration: none;
+    padding: 20px;
+}
+
+.menu ul li :hover{
+    background-color: rgb(131, 63, 187);
+    border-radius: 5px;
+    color: white;
+}
+
+@media screen and (max-width:450px)  {
+    .menu ul li{
+        display: block;
+    }
+}
+

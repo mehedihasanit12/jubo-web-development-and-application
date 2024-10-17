@@ -1,0 +1,16 @@
+Responsive Design
+
+@media screen and (max-width: 450px) {
+  .div1 {
+    width: 100%;
+    background-color: blue;
+  }
+  .div2 {
+    width: 100%;
+    background-color: cadetblue;
+  }
+  .div3 {
+    width: 100%;
+    background-color: chocolate;
+  }
+}
