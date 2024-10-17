@@ -1,0 +1,2 @@
+=rand(10)
+Design tab-----watermark ,themes, page color,page borders, color, fonts
