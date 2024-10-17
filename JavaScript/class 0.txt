@@ -1,0 +1,134 @@
+Working enviroment---compiler , Dependency manager-npm, Editor, Output/run
+Basic syntax
+variable and datatype
+Operator
+Statement
+Array
+Object
+Dom
+Bom
+Event and lisener
+Basic input and output
+Timing method
+---------------------------------------------------------------------------------------------
+M- MongoDB
+A- Angular
+R- React
+N- Node JS
+
+------------------------------------------------------------------------------------------------
+Website/web application/web plateform
+
+Front end
+      Structure and content-html
+      Presentation- CSS
+      Behavior- JS
+Backend
+      Java
+      C
+      C#
+      Python
+      Php
+      Javascript,NodeJS
+Database
+      Oracle
+      MS SQL
+      MySQL
+      MongoDB-atlas
+      
+	-----------------------------------------------------------------
+Debut video capture
+	
+JavaScript
+==============
+
+1.Row JavaScript ECMA-5 standard
+Javascript Basic Syntax
+           .js,.html
+           compiler- browser
+	     Editor- vscode
+           ''= String sign 'Hello World'
+           ""= string sign "100"
+ variable and datatype
+Operator
+Statement
+Array
+Object
+Dom
+Bom
+Event and lisener
+Basic input and output
+Timing method
+
+2.Javascript Library- JQuery
+3.JavaScript Framework
+
+
+       Front-
+
+             Angular
+             React
+             Vue
+       Backend-
+
+              NodeJS- ES6
+4.JavaScript Process- AJAX
+
+
+
+==============================================================================================================
+
+index.html এর ভিতরে জাভাস্ক্রিপ্ট কোড লিখে রান করা
+
+document.write("Hello JavaScript");
+
+Before create anything first create specification
+
+Specification--class
+          -----Information--property
+               ,Activity-- method
+
+Real thing-- object
+
+
+
+Class,
+Poperty,
+Object,
+Method
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
