@@ -1,0 +1,78 @@
+Mid tarm exam
+------------------------------------------------------------------------
+id,name,email,mobile, hostel name, room no, district 
+
+create table allocation(
+sid int(6),
+hid int(6),
+room no int(6)
+)
+---------------------------------------------------------------------------------
+
+
+
+
+
+create table district(
+ did int(5) primary key,
+ dname varchar(50)
+);
+
+create table hostel(
+hid int(5) primary key,
+hname varchar(50)
+);
+
+create table student(
+sid int(5) primary key,
+sname varchar(50),
+mobile varchar(30),
+email varchar(30),
+did int(5),
+foreign key(did) references district(did)
+); 
+
+create table allocation(
+sid int(5),
+hid int(5),
+room varchar(20),
+foreign key(sid) references student(sid),
+foreign key(hid) references hostel(hid),
+primary key (sid,hid,room)
+);
+
+-----------------------------------------------------------------------------
+
+insert into district values (1,'Dhaka'),
+                             (2,'Noakhali'),
+                             (3,'Pabna'),
+                               (4,'Jessore');
+
+insert into hostel values (1,'Male'),
+                           (2,'Female');
+insert into student values
+     (1, 'Asad','asade@gmail.com','0173434344',3),
+   (2, 'Jashim','jashim@gmail.com','0173434344',2),
+(3, 'Karim','karim@gmail.com','0173434344',1),
+(4, 'Maliha','maliha@gmail.com','0173434344',4);
+
+insert into allocation values (1,1,'405 A'),
+(1,1,'406 A'),
+(2,2,'101'),
+(3,2,'405 B'),
+(4,1,'105 B');
+
+-----------------------------------------------------------------------------
+
+select sname,email from student 
+where did=(select did from district where dname like 'Pabna');
+
+
+select sid,sname from student where sname like 'A%';
+
+
+select sname,dname from student,district
+                where student.did=district.did;
+
+
+

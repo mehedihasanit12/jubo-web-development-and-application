@@ -6,3 +6,9 @@ did int(3),
 foreign key (did)  references district(did)
 );
 
+insert into person values(1, 'Rakib khan',24000,1);
+insert into person values(2, 'Rahima Begum', 10000,3);
+insert into person values(3, 'Sumaya Bashir', 9000,2);
+insert into person values(4, 'Abdul Halim', 7000,1);
+insert into person values(5, 'Abdul Hakim', 8000,2);
+insert into person values(6, 'Abdul Fazle', 4000,1);

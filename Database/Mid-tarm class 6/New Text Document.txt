@@ -1,0 +1,48 @@
+
+
+
+select st_id, name,hname from student,hostel where hname like "male hostel";
+
+
+
+
+
+
+insert into dept VALUES (1,"web Application");
+insert into district values (1,"Bhola");
+insert into hostel values (1,"male hostel");
+insert into student values (1,"Shakib","shakib@gmail.com",017,1,1,1,102);
+
+insert into dept VALUES (2,"hotel tourism");
+insert into district values (2,"Bogra");
+insert into hostel values (2,"female hostel");
+insert into student values (3,"Kamal","kamal@gmail.com",014,1,2,1,203);
+
+
+insert into dept VALUES (3,"Ict"),
+                        (4,"English Comunication"),
+                        (5,"Graphics design");
+
+1
+--------------------------------------------------------------
+SELECT name,email from student where distid=(select distid from district where dname like 'Bogra');
+2
+----------------------------------------------------------------
+select name,dname from student,district where student.distid=district.distid;
+3
+---------------------------------------------------------------------
+select st_id, name from student where name like "K%";	
+
+
+
+
+
+
+
+
+
+
+
+
+
+

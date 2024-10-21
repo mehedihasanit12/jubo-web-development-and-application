@@ -1,0 +1,22 @@
+body{
+    background-color: #F3EBE4;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF;
+}
+
+.image{
+    width: 225px;
+}
+
+.image img{
+    width: 100%;
+}
+
+.info{
+    width: 225px;
+}

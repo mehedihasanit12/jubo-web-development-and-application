@@ -1,8 +1,8 @@
+insert into person values(1, 'Rakib khan',5000,1);
 insert into person values(2, 'Rahima Begum', 4000,3);
 insert into person values(3, 'Sumaya Bashir', 4000,2);
 insert into person values(4, 'Abdul Halim', 4000,1);
 insert into person values(5, 'Abdul Hakim', 4000,4);
-
 
 select * from person;
 select pname,income from person;

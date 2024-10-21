@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;200;500&display=swap');
+
+body{
+    font-family: "Poppins", sans-serif;
+}
+
+.hero-area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 1px 4px -1px #88889E;
+    height: 100vh;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.textarea{
+    /* width: 425px; */
+    padding: 45px;
+}
+
+.textarea h1{
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+.textarea p{
+    font-size: 26px;
+    color: #9C9E9F;
+    font-weight: 400;
+    margin-bottom: 31px;
+}
+
+.button{
+    display: flex;
+    
+}
+
+.btn{
+    font-size: 19px;
+    font-weight: 200;
+    padding: 18px;
+    border-radius: 4px;
+    margin-right: 20px;
+}
+
+.btn a{
+    text-decoration: none;
+}
+
+.secondary-btn{
+     box-shadow: 1px 1px 4px -1px #88889E;
+    background-color: white;
+}
+
+.secondary-btn a{
+    color: #2d2d2e;
+}
+
+.primary-btn{
+    background-color: #4438CA;
+}
+
+.primary-btn a{
+    color: white;
+}
+
+.image{
+    width: 609px;
+}
+
+.image img{
+    width: 100%;
+}
