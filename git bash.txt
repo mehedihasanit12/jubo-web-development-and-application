@@ -1,0 +1,6 @@
+/d/Github/jubo-web-development-and-application
+
+git add .
+git commit -m "your massage"
+
+git push origin master

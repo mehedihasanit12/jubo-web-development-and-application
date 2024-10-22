@@ -10,11 +10,29 @@ body{
     font-family: "Poppins", sans-serif;
 }
 
+/* Header */
+
+
+.logo{
+    width: 30%;
+}
+
+.logo img{
+    width: 100%;
+}
+
+.header{
+    display: flex;
+}
+
+
+
+/* Hero Area */
 .hero-area{
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 1px 1px 4px -1px #88889E;
+    /* box-shadow: 1px 1px 4px -1px #88889E; */
     height: 100vh;
 }
 
@@ -31,14 +49,14 @@ body{
 
 .textarea h1{
     font-size: 60px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .textarea p{
     font-size: 26px;
     color: #9C9E9F;
     font-weight: 400;
-    margin-bottom: 31px;
+    margin-bottom: 49px;
 }
 
 .button{
