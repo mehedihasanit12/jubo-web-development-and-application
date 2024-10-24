@@ -1,0 +1,23 @@
+ocument.write("Hello World");
+
+variable.
+a-z
+no number in first
+
+২ টি ভ্যারিয়েবল কনকেট করা কনকেট সাইন + 
+type of()
+
+Operator
+         Arithmetic Operator-+,-,/ 
+	assignment- ==
+	conditional->,>=,<=,!=,===,!==
+	logical- &&,||,!
+Operator uses
+
+if,else if, else,
+
+switch, case , break, default
+
+for,
+
+array, Object

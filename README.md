@@ -26,4 +26,5 @@ To run this project locally, you need to have the following software installed:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/jubo-web-development-and-application.git
+   git clone https://github.com/mehedihasanit12/jubo-web-development-and-application.git
+   ```
