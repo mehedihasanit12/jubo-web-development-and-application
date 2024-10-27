@@ -18,9 +18,15 @@ nav {
     width: 70%;
 }
 
+.left-menu{
+    display: flex;
+    gap: 45px;
+    align-items: center;
+}
+
 .menu ul {
     display: flex;
-    gap: 76px;
+    gap: 16px;
 }
 
 .menu ul li {
@@ -35,6 +41,7 @@ nav {
 }
 
 .menu li a {
+    color: #B3B3B3;
     padding: 20px 8px;
     text-decoration: none;
 }
@@ -46,8 +53,8 @@ nav {
 }
 
 .profile {
-    width: 55px;
-    height: 55px;
+    width: 40px;
+    height: 40px;
 }
 
 .profile img {

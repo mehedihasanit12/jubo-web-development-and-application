@@ -1,0 +1,104 @@
+mid database
+------------------------------------------------------------------------------
+
+Triggers
+--------------------------------------------------------------
+create table result(
+s_id int (5),
+c_id int(5),
+marks decimal (10,2),
+gpa decimal (10,2)
+);
+create triggers
+----------------------------------------------------------------
+insert into result values(new.s_id,new.c_id,new.marks,1.8);
+
+CREATE TRIGGER `tr1` AFTER INSERT ON `student` FOR EACH ROW insert into result values(new.s_id,new.c_id,new.mark,1.8);
+------------------------------------------------------------------------------------------
+
+begin
+	declare gpa decimal(10,2) default 0;
+    if new.mark>=80 then
+    set gpa=4.0;
+    elseif new.mark>=70 then
+    set gpa=3.5;
+    else set gpa=0;
+	end if;
+	insert into result values(new.s_id,new.c_id,new.mark,gpa);
+end
+
+-------------------------------------------------------------------------------------------------------
+
+
+create database bank;
+
+create table account(
+	a_id int(5),
+	balance decimal(10,2)
+);
+
+ insert into account values (11,10000);
+
+BEGIN
+ DECLARE ta_id int(5) DEFAULT 0;
+ DECLARE tamount decimal(10,2) DEFAULT 0;
+ DECLARE hisbalance decimal(10,2) DEFAULT 0;
+ 
+ SET ta_id=new.a_id;
+ SET tamount=new.amount;
+ 
+ SELECT balance into hisbalance FROM account WHERE a_id=ta_id;
+ 
+ IF hisbalance<tamount THEN
+ 	SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'You have not enough balance';
+ END IF;
+ 
+ END
+-----------------------------------------------------------------------------------------
+update account set balance=30000;
+update account set balance=10000 where a_id=11;
+UPDATE account set balance=balance-new.amount;
+-------------------------------------------------------------------------------------------------------
+
+create table marks(
+	roll int(5) primary key,
+	marks int(5)
+);
+
+insert into marks values(1200,67),
+(1201,35);
+
+create table log_record(
+	roll int(5),
+	oldmarks int(5),
+	newmarks int(5),
+	udate date,
+	utime time
+);
+
+insert into log_record values(55,56,34,'2024-10-15','08:32:50');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
