@@ -78,6 +78,47 @@ create table log_record(
 
 insert into log_record values(55,56,34,'2024-10-15','08:32:50');
 
+trigger-------------------------------------
+==============================
+begin
+insert into log_record values(old.roll,old.marks,new.marks,curdate(),curtime(),
+date_add(current_time(),interval 6 hour)
+);
+
+end;
+
+--------------------------------------------------------------------------------------
+
+CREATE TRIGGER `tr3`
+ AFTER UPDATE ON `marks`
+ FOR EACH ROW 
+begin
+insert into log_record values(old.roll,old.marks,new.marks,curdate(),
+date_add(current_time(),interval 6 hour)
+);
+
+end;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

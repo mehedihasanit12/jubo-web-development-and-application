@@ -1,94 +1,88 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
-body{
-    
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body {
+    font-family: "Poppins", serif;
 }
-
 section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
 }
-
-.common{
-    background-color: #00CC99;
-    width: 125px;
-    height: 125px;
-    border-radius: 5px;
-    text-align: center;
-    margin: 10px;
+.common {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(0, 204, 153);
+  width: 125px;
+  height: 125px;
+  border-radius: 5px;
+  text-align: center;
+  margin: 10px;
+  color: white;
 }
-
-.container{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 500px;
-    height: 500px;
-    padding: 20px;
+.container {
+    background-color: #333333;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 500px;
+  padding: 20px;
 }
-
-.center{
-    background-color: #009999;
-    width: 125px;
-    height: 125px;
-    border-radius: 50%;
-
+.center {
+  display: flex;
+  background-color: rgb(0, 153, 153);
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  color: white;
 }
-
-
-.div1{
-    position: absolute;
-    left: 478px;
-    top:0;
+.div1 {
+  position: absolute;
+  left: 186px;
+  top: 0px;
 }
-
-.div2{
-    position: absolute;
-    right: 318px;
-    top: 7px;
+.div2 {
+  position: absolute;
+  right: 311px;
+  top: 7px;
 }
-
-.div3{
-    position: absolute;
-    right: 317px;
-    top: 152px;
+.div3 {
+  position: absolute;
+  right: 335px;
+  top: 152px;
 }
-
-.div4{
-    position: absolute;
-    right: 316px;
-    top: 309px;
+.div4 {
+  position: absolute;
+  right: 316px;
+  top: 309px;
 }
-
-.div5{
-    position: absolute;
-    right: 478px;
-    bottom: 0;
+.div5 {
+  position: absolute;
+  right: 166px;
+  bottom: 0px;
 }
-
-.div6{
-    position: absolute;
-    left: 336px;
-    bottom: -15px;
+.div6 {
+  position: absolute;
+  left: 339px;
+  bottom: 46px;
 }
-
-.div7{
-    position: absolute;
-    left: 337px;
-    top: 183px;
+.div7 {
+  position: absolute;
+  left: 337px;
+  top: 152px;
 }
-
-.div8{
-    position: absolute;
-    left: 333px;
-    top: 32px;
+.div8 {
+  position: absolute;
+  left: 333px;
+  top: 2px;
 }
-
-
