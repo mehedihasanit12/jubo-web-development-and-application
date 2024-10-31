@@ -1,3 +1,18 @@
+.container{
+    width: 70%;
+    margin: 0 auto;
+}
+
+.table1{
+    width: 70%;
+    margin: 0 auto;
+}
+
+.table2{
+    width: 30%;
+    margin: 0 auto;
+}
+
 .div-one{
     height: 300px;
     width: 400px;

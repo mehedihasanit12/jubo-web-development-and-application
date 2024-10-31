@@ -38,30 +38,43 @@ img4.onclick = function(){
 
 
 
-// var fName = document.getElementById('fName');
-// fName.onkeyup = function(){
-//     document.getElementById('res1').innerText = fName.value;
-// }
+var fName = document.getElementById('fName');
+fName.onkeyup = function(){
+    document.getElementById('res1').innerText = fName.value;
+}
 
-// var lName = document.getElementById('lName');
-// lName.onkeyup = function(){
-//     document.getElementById('res2').innerText = lName.value;
-// }
+var lName = document.getElementById('lName');
+lName.onkeyup = function(){
+    document.getElementById('res2').innerText = lName.value;
+}
 
-// lName.onblur = function(){
-//     document.getElementById('res3').innerText = fName.value+' '+lName.value;
-//     document.getElementById('resultDiv').innerText = document.getElementById("res3").textContent;
-// }
+lName.onblur = function(){
+    document.getElementById('res3').innerText = fName.value+' '+lName.value;
+    document.getElementById('resultDiv').innerText = document.getElementById("res3").textContent;
+}
 
 
-//     var fullNameBtn = document.getElementById('fullNameBtn');
-//     fullNameBtn.onclick = function(){
-//         var firstNameValue = document.getElementById('firstName').value;
-//         var lastNameValue = document.getElementById('lastName').value;
-//         var fullName = firstNameValue + ' ' +lastNameValue;
-//         document.getElementById('fullName').value = fullName;
-        
-// }
+    var fullNameBtn = document.getElementById('fullNameBtn');
+    fullNameBtn.onclick = function(){
+        var firstNameValue = document.getElementById('firstName').value;
+        var lastNameValue = document.getElementById('lastName').value;
+        var fullName = firstNameValue + ' ' +lastNameValue;
+        document.getElementById('fullName').value = fullName;
+        document.getElementById('resultDiv').append(fullName);
+}
+
+//---------------------------------------------------------------------------
+
+    var prothom = document.getElementById('prothom');
+    var ditio = document.getElementById('ditio');
+    var purno = document.getElementById('purno');
+
+
+    
+
+
+
+//----------------------------------------------------------------------------
 
 // var fullNameBtn = document.getElementById('fullNameBtn');
 //     fullNameBtn.onclick = function(){
