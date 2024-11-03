@@ -17,3 +17,15 @@ body{
 .brand-name img{
     width: 100%;
 } */
+
+
+.navbar-brand{
+    width: 175px;
+}
+.navbar-brand img{
+    width: 100%;
+}
+
+.navbar-nav li a{
+    color: green !important;
+}
