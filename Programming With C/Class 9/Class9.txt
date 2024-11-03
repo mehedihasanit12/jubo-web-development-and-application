@@ -1,0 +1,145 @@
+#include <stdio.h>
+
+int main()
+{
+
+    int n, start, end;
+    printf("Enter the value of initialization = ");
+    scanf("%d",&start);
+    printf("Enter the value of Condition = ");
+    scanf("%d",&end);
+
+    for(n=start; n<=end; n++)
+    {
+        printf("%d. Welcome to Web Application and Web Development\n",n);
+    }
+
+}
+======================================================================================
+
+#include <stdio.h>
+
+int main()
+{
+
+    int n, value;
+    printf("Enter the value you want = ");
+    scanf("%d", &value);
+
+    for(n=1; n<=10; n++){
+        printf("%d x %d = %d\n", value, n, value*n);
+    }
+
+}
+============================================================================================
+Factorial
+-----------------------
+5! মানে ১ থেকে ৫ পর‌্যন্ত সবগুলা সংখ্যার গুনফল।
+
+5!=1*2*3*4*5
+2!=1*2
+
+n!= 
+
+
+
+#include <stdio.h>
+
+int main()
+{
+    int n,value, factorial=1;
+    printf("Enter the value of factorial = ");
+    scanf("%d", &value);
+
+    for(n=1;n<=value;n++){
+        factorial = factorial * n;
+    }
+    printf("The factorial of %d is = %d", value, factorial);
+
+}
+
+
+
+Fibonacci
+------------------------
+
+Nested for loop
+===================================================================
+
+for(initializtion; condition; incress){
+	for(initialization; condition; incress){
+	     //statement;
+	}
+
+}
+
+------------------------------------------------------------
+1st loop row
+2nd loop colum
+*****
+*****
+*****
+*****
+*****
+
+#include <stdio.h>
+
+int main()
+{
+    int i, j;
+
+    for(i=1; i<=5; i++)
+    {
+        printf("\n");
+        for(j=1;j<=5;j++){
+            printf("*");
+        }
+    }
+
+}
+--------------------------------------------------------------------------
+*
+**
+***
+****
+*****
+
+#include <stdio.h>
+
+int main()
+{
+    int i, j;
+
+    for(i=1; i<=5; i++)
+    {
+        printf("\n");
+        for(j=1;j<=i;j++){
+            printf("*");
+        }
+    }
+
+}
+
+
+-----------------------------------------
+
+
+
+
+homework
+------------------------
+prime number
+
+
+
+
+
+
+
+
+
+
+
+
+
+

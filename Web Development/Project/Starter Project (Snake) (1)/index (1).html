@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .menu {
+  background-color: aquamarine;
+  text-align: center;
+}
+
+.menu ul li {
+  display: inline-block;
+  list-style: none;
+  padding: 20px;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  padding: 20px;
+}
+
+.menu ul li :hover {
+  background-color: rgb(131, 63, 187);
+  border-radius: 5px;
+  color: white;
+}
+
+.section {
+  /* display: flex; */
+}
+
+.div1 {
+  float: left;
+  width: 33%;
+  background-color: aquamarine;
+  border: 1px solid tomato;
+}
+
+.div2 {
+  float: left;
+  width: 33%;
+  background-color: blueviolet;
+  border: 1px solid tomato;
+}
+
+.div3 {
+  float: left;
+  width: 33%;
+  background-color: rgb(13, 160, 25);
+  border: 1px solid tomato;
+}
+
+@media screen and (max-width: 450px) {
+  .menu ul li {
+    display: block;
+  }
+
+  .div1 {
+    width: 100%;
+    background-color: blue;
+  }
+  .div2 {
+    width: 100%;
+    background-color: cadetblue;
+  }
+  .div3 {
+    width: 100%;
+    background-color: chocolate;
+  }
+}
+    </style>
+  </head>
+  <body>
+    <div class="menu">
+        <ul>
+           <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Login</a></li>
+        </ul>
+    </div>
+
+    <div class="section">
+      <div class="div1">
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam
+          odit vero, illum libero deserunt aspernatur laborum minima quia
+          blanditiis impedit mollitia inventore, obcaecati dolor assumenda
+          perspiciatis voluptatum reprehenderit aperiam. Veniam? Lorem ipsum
+          dolor sit amet consectetur adipisicing elit. Accusantium totam
+          nesciunt facere adipisci velit nostrum eos reprehenderit. Neque,
+          facere reiciendis labore, explicabo consequuntur omnis, libero commodi
+          rem quas nesciunt soluta!
+        </p>
+      </div>
+
+      <div class="div2">
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam
+          odit vero, illum libero deserunt aspernatur laborum minima quia
+          blanditiis impedit mollitia inventore, obcaecati dolor assumenda
+          perspiciatis voluptatum reprehenderit aperiam. Veniam? Lorem ipsum
+          dolor sit amet consectetur adipisicing elit. Accusantium totam
+          nesciunt facere adipisci velit nostrum eos reprehenderit. Neque,
+          facere reiciendis labore, explicabo consequuntur omnis, libero commodi
+          rem quas nesciunt soluta!
+        </p>
+      </div>
+
+      <div class="div3">
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam
+          odit vero, illum libero deserunt aspernatur laborum minima quia
+          blanditiis impedit mollitia inventore, obcaecati dolor assumenda
+          perspiciatis voluptatum reprehenderit aperiam. Veniam? Lorem ipsum
+          dolor sit amet consectetur adipisicing elit. Accusantium totam
+          nesciunt facere adipisci velit nostrum eos reprehenderit. Neque,
+          facere reiciendis labore, explicabo consequuntur omnis, libero commodi
+          rem quas nesciunt soluta!
+        </p>
+        
+      
+      </div>
+    </div>
+  </body>
+</html>
