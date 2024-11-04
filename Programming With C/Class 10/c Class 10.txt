@@ -1,0 +1,160 @@
+Prime Number বের করা-----------------------------
+
+#include <stdio.h>
+
+int main(){
+    int number, i, count =0;
+
+    printf("Enter Your Number = ");
+    scanf("%d", &number);
+
+    for(i=2; i<number; i++)
+    {
+        if(number%i==0){
+            printf(" %d ",i);
+            count++;
+        }
+    }
+    if(count==0){
+        printf("\nNot Prime");
+    }
+    else{
+        printf("\nPrime");
+    }
+
+}
+==========================================================================================
+
+#include <stdio.h>
+
+int main(){
+    int number, i, count =0;
+
+    printf("Enter Your Number = ");
+    scanf("%d", &number);
+
+    for(i=2; i<number; i++)
+    {
+        if(number%i==0){
+            printf(" %d ",i);
+            count++;
+
+        }
+    }
+    if(count==0){
+        printf("\nPrime");
+    }
+    else{
+        printf("\nNot Prime");
+    }
+
+    printf("\nCount is = %d",count);
+
+}
+
+===========================================================================================
+
+#include <stdio.h>
+
+int main(){
+    int number, i, j, count;
+    printf("Enter Your Start Point = ");
+    scanf("%d", &i);
+
+    printf("Enter Your End Point = ");
+    scanf("%d", &number);
+
+
+    for(i;i<number;i++){
+        count=0;
+        for(j=2; j<i; j++){
+        if(i%j==0){
+            count++;
+        }
+            }
+    if(count==0){
+        printf("%d\n", i);
+    }
+
+    }
+
+}
+======================================================================================================
+
+1-100 এর মধ্যে প্রাইম নাম্বার কোনগুলো?
+
+
+#include <stdio.h>
+
+int main(){
+    int number, i, j, count;
+
+    printf("Enter Your Start Point = ");
+    scanf("%d", &i);
+
+    printf("Enter Your End Point = ");
+    scanf("%d", &number);
+
+
+    for(i;i<number;i++){
+        count=0;
+        for(j=2; j<i; j++){
+        if(i%j==0){
+            count++;
+        }
+            }
+    if(count==0){
+        printf("%d\n", i);
+    }
+
+    }
+
+}
+========================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

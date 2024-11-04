@@ -1,0 +1,49 @@
+.navbar{
+    background-color: darkblue !important;
+}
+
+.navbar-brand{
+    color: white!important;
+}
+
+.nav-item{
+    margin-right: 20px;
+}
+
+.nav-link{
+    color: white !important;
+}
+
+.nav-item:hover{
+    background-color: #8b8baf;
+    border-radius: 5px;
+}
+
+.banner{
+    background: url("/image/1200x500.svg") center/cover no-repeat;
+    height: 400px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    color: green;
+}
+
+.footer{
+    background-color: blue;
+    color: white;
+    padding: 2rem 0rem;
+}
+
+.footer_link a{
+    text-decoration: none;
+    color: yellowgreen;
+}
+
+.footer_link a:hover{
+    text-decoration: underline;
+}
+
+.dropdown:hover .dropdown-menu{
+    display: block;
+}
+
