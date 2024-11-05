@@ -1,24 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+body{
+    font-family: "Poppins", sans-serif;
+}
+
 .image-wrapper{
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 20px;
 }
 
 h1{
+    margin-bottom: 50px;
     color: #5F9EA0;
     text-align: center;
 }
 
 .image1{
     position: relative;
-    width: 200px;
-    height: 300px;
+    width: 239px;
+    height: 365px;
     border: 1px solid red;
 }
 
@@ -28,7 +36,16 @@ h1{
     object-fit: cover;
 }
 
+.image3{
+    height: 303px;
+}
+
+.border-none{
+    border: none;
+}
+
 .trending{
+    font-size: 12px;
     position: absolute;
     right: 0;
     top: 0;
@@ -36,7 +53,7 @@ h1{
     height: 23px;
     color: white;
     padding: 3px;
-    border-radius: 5px 0px 5px 5px;
+    border-radius: 3px 0px 0px 3px;
     background-color: red;
     text-align: center;
 }
@@ -46,9 +63,10 @@ h1{
 }
 
 .author{
+    font-size: 12px;
     position: absolute;
     bottom: 0;
-    width: 198px;
+    width: 238px;
     background-color: red;
     padding: 5px;
     text-align: left;
@@ -62,8 +80,8 @@ h1{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     background-color: white;
     border-radius: 5px;
     text-align: center;
