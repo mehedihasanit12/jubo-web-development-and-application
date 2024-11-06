@@ -39,7 +39,7 @@ $('#emailAddress').keyup(function(){
 
 function mobileCheck(){
     var mobileValue = $('#mobile').val();
-    var regex = /^(?:+88|88)?(01[3-9]\d{8})$/;
+    var regex = /(^(\+8801|8801|01|008801))[1|3-9]{1}(\d){8}$/;
     if(regex.test(mobileValue)){
         $('#mobileError').text(" ");
         return true;
@@ -55,17 +55,17 @@ $('#mobile').keyup(function(){
 });
 
 
-// $('#regForm').submit(function(){
-//     fullNameCheck();
-//     emailCheck();
-//     mobileCheck();
+$('#regForm').submit(function(){
+    fullNameCheck();
+    emailCheck();
+    mobileCheck();
 
-//     if(fullNameCheck()==true && emailCheck()==true && mobileCheck()==true){
-//         return true;
-//     } 
+    if(fullNameCheck()==true && emailCheck()==true && mobileCheck()==true){
+        return true;
+    } 
 
-//     return false;
-// })
+    return false;
+})
 
 
 //=========================================================================
@@ -123,6 +123,7 @@ $('#fullNameBtn').click(function(){
 
 //===============================================================================
 
+// Smart Watch Start
 
 
 function smartWatch()
@@ -134,20 +135,30 @@ function smartWatch()
     var seconds = date.getSeconds();
     var world = 'AM';
     
+    
 
     if(hours>12){
+        var hello= 0 ;
         hello=hours-12;
         world = 'PM';
+        var myWatch = hello +':'+ minutes+':'+ seconds +' '+world;
+    }
+    else if(hours==12){
+        world = 'PM';
+        var myWatch = hours +':'+ minutes+':'+ seconds +' '+world;
+    }
+     else{
+        var myWatch = hours +':'+ minutes+':'+ seconds +' '+world;
     }
 
-    var myWatch = hello +':'+ minutes+':'+ seconds +' '+world;
+    
 
     document.getElementById('watchRes').innerText = myWatch;
 }
 
 setInterval(smartWatch, 1000);
 
-
+// Smart Watch End
 
 // function test(){
 //     alert('Hello');

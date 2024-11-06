@@ -1,0 +1,24 @@
+trigger-
+event
+xampp
+=====================================================================
+User Create
+------------------------------------------------------------------------
+
+CREATE USER asad@localhost IDENTIFIED BY '1234';
+
+GRANT select, INSERT on bank.account TO asad@localhost;
+
+ mysql -u asad -p 
+
+show databases
+use bank
+show tables;
+
+show privileges\G
+
+update student set s_name='Abid Hossain' where s_id=1001;
+
+GRANT select, INSERT,update on bank.account TO asad@localhost;
+
+REVOKE INSERT, SELECT  ON bank.account FROM asad@localhost;

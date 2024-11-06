@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sticky Position Example</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .sticky-element {
+      top: 0; /* স্টিকি অবস্থানের জন্য top সেট করুন */
+      z-index: 1000;
+    }
+    .content {
+      height: 2000px; /* স্ক্রোলিং প্রভাব দেখানোর জন্য উচ্চতা */
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 position-sticky sticky-element bg-light">
+      আমি একটি স্টিকি এলিমেন্ট
+    </div>
+    <div class="col-md-9 content bg-secondary text-white">
+      এখানে কন্টেন্ট থাকবে যাতে স্ক্রোলের সময় স্টিকি এলিমেন্ট স্থির থাকে।
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
