@@ -1,0 +1,38 @@
+/* *{
+    margin: 0;
+    padding: 0;
+
+}
+
+body{
+    text-align: center;
+}
+
+.first-div{
+    background-color: rgb(178, 211, 33);
+}
+
+.second-div{
+    background-color: chocolate;
+}
+
+.flex-div{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    height: 1000px;
+}
+
+.flex-div-first{
+    background-color: aquamarine;
+     width: 500px; 
+     height: 500px;
+}
+
+.flex-div-second{
+    background-color: blueviolet;
+     width: 500px; 
+     height: 500px;
+} */
+
+
