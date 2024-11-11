@@ -58,6 +58,192 @@ Array
 2. two-dimension
 3. multi-dimension
 
+--------------------------------------------------------------
+One Dimensional
+-------------------------------------------------------------
+
+data type array-name[size];-------------array declaretion
+
+int marks_c[25]= {40,25,42,.......,25}
+
+index no start 0
+------------------------------------------------------------
+
+#include <stdio.h>
+
+int main(){
+
+    int marks[5] = {34,65,78,23,65};
+
+    printf("%d\n", marks[3]);
+
+}
+
+
+
+==================================================================
+
+#include <stdio.h>
+
+int main(){
+
+    int i, marks[5] = {34,65,78,23,65};
+
+    for(i=0;i<5;i++){
+        printf("%d\n", marks[i]);
+    }
+
+}
+------------------------------------------------------------------------------
+
+#include <stdio.h>
+
+int main(){
+
+    int i, marks[5] = {34,65,78,23,65};
+
+    for(i=0;i<5;i++){
+        printf("marks[%d] = %d\n",i, marks[i]);
+    }
+
+}
+--------------------------------------------------------------------------------
+#include <stdio.h>
+
+int main(){
+
+    int i, marks[5] = {34,65,78,23,65};
+
+    for(i=0;i<5;i++){
+        printf("marks of Roll [%d] = %d\n",i+1, marks[i]);
+    }
+
+}
+-------------------------------------------------------------------------------
+#include <stdio.h>
+
+int main(){
+
+    int i,sum=0, marks[5] = {34,65,78,23,65};
+
+    for(i=0;i<5;i++){
+            sum = sum + marks[i];
+    }
+    printf("marks = %d\n",sum);
+
+}
+--------------------------------------------------------------------
+
+Avarage , CGPA
+
+-------------------------------------------------------------------------
+#include <stdio.h>
+
+int main(){
+
+    int i,sum=0,avarage, marks[5] = {34,65,78,23,65};
+
+    for(i=0;i<5;i++){
+            sum = sum + marks[i];
+
+    }
+    avarage = sum/i+1;
+    
+    printf("marks = %d\nAvarage= %d\n",sum,avarage);
+
+}
+==============================================================================
+Sizeof()
+=================================================================================
+
+#include <stdio.h>
+
+int main(){
+
+    int i;
+    double b;
+    float c;
+    char d;
+
+    printf("Size of integer = %d\n", sizeof(i));
+    printf("Size of double = %d\n", sizeof(b));
+    printf("Size of float = %d\n", sizeof(c));
+    printf("Size of char = %d\n", sizeof(d));
+
+}
+-----------------------------------------------------------------------------------------
+#include <stdio.h>
+
+int main(){
+
+    int i;
+    double b;
+    float c;
+    char d;
+    int array[4];
+
+    printf("Size of integer = %d\n", sizeof(i));
+    printf("Size of double = %d\n", sizeof(b));
+    printf("Size of float = %d\n", sizeof(c));
+    printf("Size of char = %d\n", sizeof(d));
+    printf("Size of array = %d\n", sizeof(array));
+
+}
+---------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
