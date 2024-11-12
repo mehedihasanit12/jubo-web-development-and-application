@@ -1,0 +1,78 @@
+CRUD Oparation
+--------------------------------------------------------------
+Object Oriented Programming = A Standard
+
+Before create anything first create specification
+
+Specification:
+	information- ওই জিনিস সম্পর্কে তথ্য
+ 	Activity------------কি করা যায়
+
+
+Class--------- specification
+Property----------------information
+Method------------- Activity
+Object---------------- real Thing
+
+======================================================================
+
+Web Development
+----------------------------------------------
+Front End - Html, css,js
+Backend - server lang(c#--Asp.net,Java--Springboot, php---laravel ,python, Ruby on Rail, JavaScript)
+Database Server - Oracle, MSSQL, MySQL, MongoDB
+============================================================================
+
+==========================================================================
+
+PHP Gtk------------https://gtk.php.net/
+
+
+==========================================================================
+
+
+PHP - 
+
+Procedural Way
+OOP Way
+-------------------------------------------------------------------------------------
+
+PHP working Enviroment
+
+----------------------------------------
+11:09 AM
+--------------------------------------
+Php Is Dead 
+------------------------------------------
+
+1989--web tim baerner lee- a system
+1991- html
+1994- php  -- personal Home Page -- Hyper Text Pre-poccesor
+2000- 2004 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

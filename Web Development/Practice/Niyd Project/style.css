@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+/* Header Section */
+
+.navbar-brand img {
+  width: 70px;
+  height: 70px;
+}
+
+.navbar-dark .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(12, 149, 71, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") ; 
+  
+}
+
+button.btn.btn-primary {
+    outline: none;
+    border: none;
+    background-color: #099647;
+}
+
+a.nav-link {
+    
+}
+
+.nav-link{
+  
+  padding: 15px 10px !important;
+}
+
+a.nav-link {
+    color: #EC2127 !important;
+    position: relative;
+}
+
+i.fa-solid.fa-circle {
+    font-size: 6px;
+    position: absolute;
+    right: 1px;
+    top: 17px;
+}
+
+
+/* Hero Section */
+
+.hero-section {
+  
+}
+
+
+.left-content button {
+  padding: 13px 30px;
+}
+
+.right-content img{
+  width: 100%;
+}
+
+/* institution Success icon size Start*/
+
+.image {
+  width: 30px;
+  height: 30px;
+}
+
+/* institution Success icon size End*/
+
+/* institution Success font color Start*/
+
+.student {
+  color: white;
+}
+
+/* institution Success font color End*/
+
+/* Top Courses Background image start */
+
+.backgroundimg {
+  background: url("images/images (16).jpeg");
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  width: 200px;
+  height: 200px;
+}
+
+/* Top Courses Background image End */
+
+/* Address Section Start */
+
+.address {
+  color: white;
+  background-color: #0C9547;
+}
+
+/* Address Section End */
+
+/* Navbar and Hero Section Background image start */
+
+.bg {
+  background: url(images/Hero-BG.jpg);
+  /* background-position: cover; */
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
+/* Navbar and Hero Section Background image End */
+
+
+
+
+

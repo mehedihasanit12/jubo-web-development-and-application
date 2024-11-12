@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+/* Top Courses Background image start */
+
+.backgroundimg {
+  /* background: url("images/images (16).jpeg");
+  object-fit: cover;
+  background-size: cover;
+  background-position: center; */
+  
+  display: flex;
+  justify-content: center;
+}
+
+.backgroundimg img{
+    width: 200px;
+  height: 200px;
+}
+
+/* Top Courses Background image End */
+
+.course{
+    text-align: center;
+    position: relative;
+}
+
+.small-card{
+    background-color: #EBB36B;
+    height: 30px;
+    width: 70px;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
