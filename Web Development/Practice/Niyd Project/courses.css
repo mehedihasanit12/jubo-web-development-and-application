@@ -46,3 +46,38 @@ body {
     top: 0;
     left: 0;
 }
+
+
+.grid-div{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 10px;
+    row-gap: 10px;
+    padding: 20px;
+}
+
+.grid-div img{
+    width: 200px;
+    height: 200px;
+}
+
+.grid-one{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: cadetblue;
+}
+
+
+@media only screen and (max-width: 600px){
+	/*Small smartphones [325px -> 425px]*/
+    .grid-div{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    column-gap: 10px;
+    row-gap: 10px;
+    padding: 20px;
+   }  
+}

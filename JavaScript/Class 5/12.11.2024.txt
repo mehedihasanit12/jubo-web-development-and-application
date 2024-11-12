@@ -49,28 +49,98 @@ Php Is Dead
 1991- html
 1994- php  -- personal Home Page -- Hyper Text Pre-poccesor
 2000- 2004 
+2012- laravel
 
 
+PHP working Enviroment
+-----------------------------------------------
+11:55 AM
+-----------------
+compiler--------- Apache, IIS, AOL,ZEUS
+
+depandency manager-------- composer 
+Editor-------------vs code
+browser--------------chrome,edge
 
 
+------------------------------------------------
+
+<?php
 
 
+echo "Hello World";
+
+echo,print
 
 
+------------------------------------------------------------------------
+
+<?php
 
 
+//echo "Hello World";
+
+function demo()
+{
+    echo "Hello World";
+}
+
+demo();
+---------------------------------------------------------------------------
+
+class Demo
+{
+    public function text()
+    {
+        echo "Hello World";
+    }
+}
+
+$demo = new Demo();
+$demo->test();
+------------------------------------------------------------
 
 
+$------variable
 
 
+-> php object sign
+
+===============================================================================
+1:13 PM
+-------------------------------
+Lunch Break
+-----------------------------------
+
+create file,folder xammp/htdocs/php-project---------------------- app, assets,views,index.php
+, composer.json.
+
+=======================================================================================
+
+<?php
 
 
+namespace App\classes;
+
+class HelloWorld
+{
+    public $message;
+
+    public function __construct()
+    {
+        $this->message = "Hello World";
+    }
+
+    public function index()
+    {
+        echo $this->message;
+    }
+}
 
 
+===========================================================================
 
-
-
-
+Php Project Create
 
 
 
