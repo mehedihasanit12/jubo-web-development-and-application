@@ -81,3 +81,17 @@ body {
     padding: 20px;
    }  
 }
+
+.card{
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.card span{
+    background-color: #0C9547;
+    height: 30px;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}

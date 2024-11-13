@@ -117,5 +117,26 @@ i.fa-solid.fa-circle {
 
 
 
+/* courses */
 
+.card{
+    position: relative;
+    margin-bottom: 20px;
+}
 
+.card span{
+    background-color: #0C9547;
+    height: 30px;
+    padding: 10px;
+    position: absolute;
+    top: -1px;
+    left: -1px;
+}
+
+.free{
+  height: 60px;
+  padding: 0px;
+  position: absolute;
+  top: -20px;
+  right: -28px;
+}
