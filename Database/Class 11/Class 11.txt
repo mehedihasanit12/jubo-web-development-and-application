@@ -1,0 +1,18 @@
+13.11.2024
+------------------------------------------------------
+12:20 PM
+----------------
+
+Database Normalization
+-------------------------
+
+1Nf, 2NF and 3NF
+
+Multivalued Attributes or repeating groups
+Partial Dependency
+Transitive Dependency
+----------------------------------------------------
+
+First Normal Form
+
+

@@ -39,15 +39,9 @@ a.nav-link {
 
 a.nav-link {
     color: #EC2127 !important;
-    position: relative;
 }
 
-i.fa-solid.fa-circle {
-    font-size: 6px;
-    position: absolute;
-    right: 1px;
-    top: 17px;
-}
+
 
 
 /* Hero Section */
