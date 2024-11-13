@@ -28,7 +28,7 @@ To run this project locally, you need to have the following software installed:
    ```bash
    git clone https://github.com/mehedihasanit12/jubo-web-development-and-application.git
    ```
-### Live Project Link
+## Live Project Link
    1. Practice Project:
 
        ```bash
