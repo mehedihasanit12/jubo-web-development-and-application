@@ -15,4 +15,4 @@ Transitive Dependency
 
 First Normal Form
 
-
+Determine NF 

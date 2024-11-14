@@ -1,0 +1,33 @@
+
+.flex{
+    background-color: green;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tooltip{
+    position: relative;
+    display: inline-block;
+}
+
+
+
+.tooltiptext{
+    position: absolute;
+    visibility: hidden;
+    width: 130px;
+    bottom: 150%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    
+}
+
+.tooltip:hover .tooltiptext{
+    visibility: visible;
+}
