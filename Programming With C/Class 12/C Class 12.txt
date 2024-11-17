@@ -1,0 +1,380 @@
+17.11.2024
+------------------------
+
+Array size- 6 যোগ করে আউটপুট প্রিন্ট
+=====================================================================================
+
+#include <stdio.h>
+
+int main()
+{
+    int i,sum=0,  marks[6] = {34,56,78,44,66,78};
+
+    for(i=0;i<5;i++)
+    {
+        sum = sum + marks[i];
+    }
+
+    printf("Sum is %d",sum);
+    
+    
+}
+==========================================================================================
+
+#include <stdio.h>
+
+int main()
+{
+    int i,size,sum=0,  marks[6] = {34,56,78,44,66,78};
+    size = sizeof(marks)/4;
+    printf("%d",size);
+    for(i=0;i<size;i++)
+    {
+        sum = sum + marks[i];
+    }
+
+    printf("Sum is %d\n",sum);
+
+    printf("Size of integer = %d\n", sizeof(marks));
+}
+--------------------------------------------------------------------------------------------
+
+#include <stdio.h>
+
+int main()
+{
+    int i,size,sum=0,  marks[6] = {34,56,78,44,66,78};
+    size = sizeof(marks)/sizeof(marks[0]);
+    printf("%d",size);
+    for(i=0;i<size;i++)
+    {
+        sum = sum + marks[i];
+    }
+
+    printf("Sum is %d\n",sum);
+
+    printf("Size of integer = %d\n", sizeof(marks));
+}
+------------------------------------------------------------------------------------------------------
+#include <stdio.h>
+
+int main()
+{
+    int i,size,sum=0,  marks[6] = {34,56,78,44,66,78};
+    size = sizeof(marks)/sizeof(int);
+    printf("%d",size);
+    for(i=0;i<size;i++)
+    {
+        sum = sum + marks[i];
+    }
+
+    printf("Sum is %d\n",sum);
+
+    printf("Size of integer = %d\n", sizeof(marks));
+}
+==================================================================================
+Average 
+===========================================================================
+#include <stdio.h>
+
+int main()
+{
+    int i,average,size,sum=0,  marks[6] = {34,56,78,44,66,78};
+
+    size = sizeof(marks)/sizeof(marks[0]);
+
+    for(i=0;i<size;i++)
+    {
+        sum = sum + marks[i];
+    }
+    average = sum/size;
+
+
+    printf("Sum is %d\n Average is %d\n",sum,average);
+
+
+}
+==========================================================================
+
+#include <stdio.h>
+
+int main()
+{
+    int i,size,sum=0,  marks[6] = {34,56,78,44,66,78};
+    float average;
+
+    size = sizeof(marks)/sizeof(marks[0]);
+
+    for(i=0;i<size;i++)
+    {
+        sum = sum + marks[i];
+    }
+    average = sum/size;
+
+
+    printf("Sum is %d\n Average is %lf\n",sum,average);
+
+
+}
+------------------------------------------------------------------------------------------------------------------
+
+
+typeCast
+==============================================================================
+average = (float) sum/size;
+-------------------------------
+
+#include <stdio.h>
+
+int main()
+{
+    int i,size,sum=0,  marks[6] = {34,56,78,44,66,78};
+    float average;
+
+    size = sizeof(marks)/sizeof(marks[0]);
+
+    for(i=0;i<size;i++)
+    {
+        sum = sum + marks[i];
+    }
+    average = (float) sum/size;----------------------------------------------------typecast
+
+
+    printf("Sum is %d\n Average is %f\n",sum,average);
+
+
+}
+
+============================================================================================
+Now Time is 10:03 AM|
+----------------------
+
+#include <stdio.h>
+
+int main()
+{
+    int i,size,sum=0,  marks[6] = {34,56,78,44,66,78};
+    float average;
+
+    size = sizeof(marks)/sizeof(marks[0]);
+
+    for(i=0;i<size;i++)
+    {
+        sum = sum + marks[i];
+    }
+    average = (float) sum/size;
+
+
+    printf("Sum is %d\n Average is %0.2lf\n",sum,average);
+
+}
+===================================================================================
+
+Ignore Negetive Number 
+
+======================================================
+
+#include <stdio.h>
+
+int main()
+{
+    int i,size,sum=0,  marks[6] = {34,56,-78,-44,66,78};
+    float average;
+
+    size = sizeof(marks)/sizeof(marks[0]);
+
+    for(i=0;i<size;i++)
+    {
+        if(marks[i]>0)-------------------------------------------------------------ignore Negetive Number
+        {
+            sum = sum + marks[i];
+        }
+
+    }
+    average = (float) sum/size;
+
+
+    printf("Sum is %d\n Average is %0.2lf\n",sum,average);
+
+}
+
+===================================================================================
+
+positive number sum and negative number sum
+=============================================
+
+#include <stdio.h>
+
+int main()
+{
+    int i,size,positive_sum=0,negative_sum=0,  marks[6] = {34,56,-78,-44,66,78};
+
+    size = sizeof(marks)/sizeof(marks[0]);
+
+    for(i=0;i<size;i++)
+    {
+        if(marks[i]>0)
+        {
+            positive_sum = positive_sum + marks[i];------------------------------------------positive sum
+        }
+        else
+        {
+            negative_sum = negative_sum + marks[i];--------------------------------------------negative sum
+        }
+
+    }
+
+
+    printf("Positive Sum is %d\n",positive_sum);
+    printf("Negative Sum is %d\n",negative_sum);
+
+}
+========================================================================================================
+
+array input from user
+
+-----------------------------------------------------------------------------------------
+#include <stdio.h>
+
+int main()
+{
+    int i,size,sum=0;
+    printf("Enter the size of array = ");
+    scanf("%d", &size);
+
+    int arr[size];
+
+    printf("Enter the element of the array = ");
+
+    for(i=0;i<size;i++)
+    {
+        scanf("%d", &arr[i]);
+        sum=sum+arr[i];
+
+    }
+
+    printf("The Sum is %d",sum);
+
+}
+==================================================================================================================
+
+One Dimetional End
+
+==================================================================================================================
+
+
+Two Dimentional Array
+=====================================================================================================================
+11:04 AM
+==========
+
+#include <stdio.h>
+
+int main()
+{
+    int arr[2][3]= { {10,20,30}, {40,50,60} };
+
+    printf("%d ", arr[0][0]);
+    printf("%d ", arr[0][1]);
+    printf("%d \n", arr[0][2]);
+
+    printf("%d ", arr[1][0]);
+    printf("%d ", arr[1][1]);
+    printf("%d ", arr[1][2]);
+    
+}
+==========================================================================================================================
+using for loop
+----------------------
+
+#include <stdio.h>
+
+int main()
+{
+    int arr[2][3]= { {10,20,30}, {40,50,60} };
+
+    int i, j;
+
+    for(i=0; i<2; i++){
+        for(j=0; j<3; j++){
+            printf("arr[%d][%d] = %d\n",i,j,arr[i][j]);
+        }
+    }
+}
+======================================================================
+
+#include <stdio.h>
+
+int main()
+{
+    int arr[2][3]= { {10,20,30}, {40,50,60} };
+
+    printf("%d ", arr[0][0]);
+    printf("%d ", arr[0][1]);
+    printf("%d \n", arr[0][2]);
+
+    printf("%d ", arr[1][0]);
+    printf("%d ", arr[1][1]);
+    printf("%d ", arr[1][2]);
+    
+    int i, j;
+    
+    for(i=0; i<2; i++){
+        for(j=0; j<3; j++){
+            printf("arr[%d][%d] = %d\n",i,j,arr[i][j]);
+        }
+    }
+}
+==================================================================================================
+HomeTask
+================================================================
+
+
+এরের মধ্যে থেকে সবচেয়ে বড় নাম্বার এবং ছোট টা বের করতে হবে।
+ইউজার থেকে এ্যারে ইনপুট নিতে হবে।
+=========================================================================================== 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
