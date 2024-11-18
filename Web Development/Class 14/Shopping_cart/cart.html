@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping cart</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <div class="container mt-4">
+      <h1 class="text-center">Shopping Cart</h1>
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead class="table-dark">
+            <tr>
+              <th>Product</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Subtotal</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+
+          <tbody>
+
+            <!-- Row 1 -->
+
+            <tr>
+              <td>
+                <div class="d-flex align-items-center gap-3">
+                  <img
+                    src="assets/image/100.png"
+                    class="img-thumbnail"
+                    alt=""
+                  />
+                  <div>
+                    <h3>Apple Watch</h3>
+                    <p>mobile</p>
+                  </div>
+                </div>
+              </td>
+
+              <td>
+                TK 30000
+              </td>
+
+               
+
+              <td>
+                <div>
+                    <div class="input-group text-center mb-3" style="max-width: 100px;">
+                        <button class="btn btn-outline-secondary">-</button>
+                        <input type="text" class="form-control" value="1">
+                        <button class="btn btn-outline-secondary">+</button>
+                    </div>
+                </div>
+              </td>
+
+
+              <td>
+                TK 60000
+              </td>
+
+              <td>
+                <button class="btn btn-danger">Remove</button>
+              </td>
+
+            </tr>
+
+            <!-- Row 2 -->
+
+            <tr>
+              <td>
+                <div class="d-flex align-items-center gap-3">
+                  <img
+                    src="assets/image/100.png"
+                    class="img-thumbnail"
+                    alt=""
+                  />
+                  <div>
+                    <h3>Samsung Watch</h3>
+                    <p>watch</p>
+                  </div>
+                </div>
+              </td>
+
+              <td>
+                TK 10000
+              </td>
+
+              
+
+              <td>
+                <div>
+                    <div class="input-group text-center mb-3" style="max-width: 100px;">
+                        <button class="btn btn-outline-secondary">-</button>
+                        <input type="text" class="form-control" value="1">
+                        <button class="btn btn-outline-secondary">+</button>
+                    </div>
+                </div>
+              </td>
+
+
+              <td>
+                TK 10000
+              </td>
+
+              <td>
+                <button class="btn btn-danger">Remove</button>
+              </td>
+
+            </tr>
+
+
+            <!-- Row 3 -->
+
+            <!-- <tr>
+              <td>
+                <div class="d-flex align-items-center gap-3">
+                  <img
+                    src="assets/image/100.png"
+                    class="img-thumbnail"
+                    alt=""
+                  />
+                  <div>
+                    <h3>Samsung Watch</h3>
+                    <p>watch</p>
+                  </div>
+                </div>
+              </td>
+
+              <td>
+                TK 10000
+              </td>
+
+              <td>
+                <div>
+                    <div class="input-group text-center mb-3" style="max-width: 100px;">
+                        <button class="btn btn-outline-secondary">-</button>
+                        <input type="text" class="form-control" value="1">
+                        <button class="btn btn-outline-secondary">+</button>
+                    </div>
+                </div>
+              </td>
+
+
+              <td>
+                TK 10000
+              </td>
+
+            </tr> -->
+
+
+            <!-- Row 4 -->
+
+
+            <!-- <tr>
+              <td>
+                <div class="d-flex align-items-center gap-3">
+                  <img
+                    src="assets/image/100.png"
+                    class="img-thumbnail"
+                    alt=""
+                  />
+                  <div>
+                    <h3>Samsung Watch</h3>
+                    <p>watch</p>
+                  </div>
+                </div>
+              </td>
+
+              <td>
+                TK 10000
+              </td>
+
+              <td>
+                <div>
+                    <div class="input-group text-center mb-3" style="max-width: 100px;">
+                        <button class="btn btn-outline-secondary">-</button>
+                        <input type="text" class="form-control" value="1">
+                        <button class="btn btn-outline-secondary">+</button>
+                    </div>
+                </div>
+              </td>
+
+
+              <td>
+                TK 10000
+              </td>
+
+            </tr> -->
+
+            <!-- Row 5 -->
+
+
+            <!-- <tr>
+              <td>
+                <div class="d-flex align-items-center gap-3">
+                  <img
+                    src="assets/image/100.png"
+                    class="img-thumbnail"
+                    alt=""
+                  />
+                  <div>
+                    <h3>Samsung Watch</h3>
+                    <p>watch</p>
+                  </div>
+                </div>
+              </td>
+
+              <td>
+                TK 10000
+              </td>
+
+              <td>
+                <div>
+                    <div class="input-group text-center mb-3" style="max-width: 100px;">
+                        <button class="btn btn-outline-secondary">-</button>
+                        <input type="text" class="form-control" value="1">
+                        <button class="btn btn-outline-secondary">+</button>
+                    </div>
+                </div>
+              </td>
+
+
+              <td>
+                TK 10000
+              </td>
+
+            </tr> -->
+
+
+            <!-- Total -->
+
+            <tr>
+                <td colspan="4" class="text-end fw-bold">Total</td>
+                <td class="fw-bold">TK 70000</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+
+      <!-- Proceed Button -->
+
+
+      <div class="text-end">
+        <a href="checkout.html" class="btn btn-primary">Proceed to Checkout</a>
+      </div>
+
+
+    </div>
+  </body>
+</html>

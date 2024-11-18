@@ -1,0 +1,36 @@
+.product .card{
+    border: 1px solid green;
+    
+}
+
+.product .card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 10px 15px black;
+    transition: transform 0.3s ease ;
+}
+
+
+/* view html Start*/
+
+
+.product-dtails{
+    border-radius: 10px;
+    transition: transform 0.3s ease ;
+}
+
+.product-dtails:hover{
+    transform: translateX(-10px);
+    box-shadow: 0 10px 15px black;
+}
+
+
+/*  Related Product  */
+
+
+.relafted-product .card{
+    width: 300px;
+    height: 300px;
+}
+
+
+/* view html End*/
