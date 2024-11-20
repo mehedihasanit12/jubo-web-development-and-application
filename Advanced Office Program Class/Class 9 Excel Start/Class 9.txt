@@ -1,0 +1,22 @@
+workbook
+worksheet,bar
+formula bar
+quick access bar
+ribbon
+status bar,
+
+Fill Handlle
+================================================
+
+Cell Reference----- =SUM(B3,B4,B5,B6,B7)
+=B3+B4+B5+B6+B7
+-------------------------------------------------
+Relative referances
+ctrl+tilda
+------------------------------------------------------------
+
+absulute refarances---- =B14/$B$13 f4
+
+-------------------------------------------------------
+Now Time 11:06 AM
+--------------------------------------------------
