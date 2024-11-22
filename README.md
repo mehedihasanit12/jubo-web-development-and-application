@@ -29,8 +29,8 @@ To run this project locally, you need to have the following software installed:
    git clone https://github.com/mehedihasanit12/jubo-web-development-and-application.git
    ```
 ## Live Project Link
-   1. Practice Project:
+   1. NIYD Project:
 
-       ```bash
+      
       https://mehedihasanit12.github.io/jubo-web-development-and-application/Web%20Development/Practice/Niyd%20Project%20(Main)/index.html
-      ```  
+      
