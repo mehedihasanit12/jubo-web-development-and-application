@@ -1,0 +1,9 @@
+.student-subject{
+    color: white;
+    background-color: black;
+    padding: 0 5px;
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    left: 70px;
+}
