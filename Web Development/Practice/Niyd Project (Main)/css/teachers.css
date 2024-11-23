@@ -1,0 +1,62 @@
+/* Teachers Section */
+
+.teachers-section{
+  
+}
+
+
+.teachers-section-head{
+  width: 40%;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  border-bottom: 5px solid #099647;
+}
+
+.teachers-section-head p{
+  width: 52%;
+  margin: 0 auto;
+}
+
+.card-image-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+
+.teachers-card{
+  margin-bottom: 5px !important;
+  width: 300px;
+  background-color: #099647;
+  text-align: center;
+  box-shadow: 0px 10px 15px #ddd;
+  border: none;
+  margin: 10px;
+  padding: 20px;
+}
+
+.card-image{
+  width: 70px;
+  height: 70px;
+  border: 2px solid green;
+  margin-left: 20px;
+}
+
+
+.card-image-position{
+  position: relative;
+  bottom: 18px;
+  right: 82px;
+  width: 20px;
+  border: 1px solid green;
+}
+
+.card-content{
+    margin-top: 20px;
+}
+
+.card-content h1{
+    font-size: 20px;
+}
