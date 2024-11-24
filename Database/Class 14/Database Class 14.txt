@@ -1,0 +1,10 @@
+24.11.2024
+======================================================================
+Database Security
+-------------------------------
+cross site scripting
+password leakege 
+
+Audit Trails
+Encryption
+
