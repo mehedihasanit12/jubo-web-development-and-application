@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+
+
+.before-menu{
+    background-color: #00ADEE;
+    padding: 10px 0;
+}
+
+
+.before-menu-wrapper{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+
+
+.before-menu-left{
+    display: flex;
+    gap: 20px;
+    color: white;
+}
+
+
+.before-menu-right{
+    display: flex;
+    gap: 20px;
+}
+
+
+/* Nav */
+
+
+header{
+    background-color: #383C4E;
+}
+
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.logo{
+    text-align: center;
+}
+
+.logo h1{
+    font-size: 36px;
+    color: #2A82A5;
+    font-weight: bold;
+    text-wrap: nowrap;
+    margin-bottom: 0px;
+    font-style: italic;
+}
+
+.logo p{
+    color: #807F8B;
+    text-wrap: nowrap;
+}
+
+.menu ul{
+    display: flex;
+    gap: 20px;
+}
+
+.menu ul li{
+    list-style: none;
+    margin-left: 10px;
+}
+
+.menu ul li a{
+    text-decoration: none;
+    color: #b9bfda;
+}
+
+
+
+/* Hero Section */
+
+
+
+.hero-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url(../images/hero-bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+}
+
+.hero-content{
+    
+}
+
+.hero-content h5{
+    color: white;
+    font-size:34px;
+    font-weight: 400;
+}
+
+.hero-content h1{
+    font-size: 62px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero-content p{
+    color: white;
+    margin-bottom: 58px;
+}
+
+.hero-button{
+   
+}
+
+.hero-button button{
+    border: none;
+    background-color: #00ADEE;
+    padding: 10px 15px;
+    border-radius: 15px;
+    color: white;
+    font-weight: bold;
+     margin-left: 50px;
+}
+
+
+.card-section{
+    background-color: #EEF8FF;
+   padding: 20px;
+}
+
+.card-section-wrapper{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.card-one{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 10px solid #00A6EE;
+    text-align: center;
+    padding: 30px;
+    font-size: 30px;
+    box-shadow: 0px 0px 15px 6px #00A6EE;
+    margin-bottom: 23px;
+    color: #464646;
+    font-weight: bold;
+}
+
+
+
+/* Course Section */
+
+
+.course-section{
+    margin-bottom: 100px;
+}
+
+.course-head{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    text-align: center;
+    
+}
+
+.course-head p{
+    
+}
+
+.course-card-wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+.course-card{
+    width: 400px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px 2px #ddd;
+}
+
+.course-card-image{
+
+}
+
+.course-card-content{
+    text-align: center;
+}
+
+.course-card-content h1{
+    font-size: 27px;
+    margin-top: 10px;
+}
+
+.course-card-content p{
+    color: #2E3344;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.course-card-content button{
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    background-color: #2E3344;
+    font-weight: bold;
+}
+
+
+
+
+
+/* Newsletter Section */
+
+
+
+.newsletter-section{
+    background-color: #71D4FB;
+}
+
+.newsletter-wrapper{
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+.newsletter-left{
+
+}
+
+
+.newsletter-form{
+
+}
+
+.form-input{
+    border: none;
+    color: #383C4E;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.form-button{
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    background-color: #2E3344;
+    border-radius: 5px;
+}
+
+.form-massage{
+    width: 323px;
+}
+
+
+/* Student Review */
+
+
+.student-review{
+    margin-bottom: 100PX;
+}
+
+.student-review-head{
+    text-align: center;
+    margin-top: 100px;
+}
+
+.student-review-head h1{
+    
+}
+
+
+
