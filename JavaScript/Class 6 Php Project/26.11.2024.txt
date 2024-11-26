@@ -1,0 +1,310 @@
+26.11.2024
+=======================================================================
+
+Php Project
+------------------------
+9:23 AM
+--------
+
+
+==================================
+10:00 AM
+
+-----------------------------------
+
+Now 10:13 AM
+-------------------------------
+Now 10:29 AM
+
+---------------------------------------------------------------------------------
+Variable ----------------start with $ sign,a-z,A-z, No Number in start
+Data Type
+Operator
+Statement--------------------Single line, conditional-IF IF ELSE, IF ELSE,SWITCH, repeated
+Array
+
+
+
+============================================================
+
+
+same-variable-property-attribute
+method-function-behavior
+
+------------------------------------------------------------------------------
+
+$this->firstName = "Kobir";
+        $this->lastName = "Rifat";
+
+        echo $this->firstName.' '.$this->lastName;
+
+---------------------------------------------------------------------------
+
+$this->firstName = "Kobir";
+        $this->lastName = "Rifat";
+
+        echo gettype($this->firstName);
+--------------------------------------------------------------------------------
+
+variable-------------string , boolean, integer
+
+-------------------------------------------------------------------
+
+Oparetor---------------Arithmetic Operator: +,,-,*,++,--
+				Assignment Operator:=,+=,-=,
+conditional--------------<,>,<=,
+logical operator:&&,||,!
+
+-------------------------------------------------------------------------------------
+
+ Now 12:14 PM 
+---------------------------------------
+
+
+$this->x = 10;
+        $this->y = 20;
+        $this->z = $this->x + $this->y;
+
+        echo $this->z;
+
+-------------------------------------------------
+
+Error -Exception
+
+1. Fatal Error----------------- logical error
+2. Syntax error--------------------বানান ভুল
+3. Notice------------------সবঠিক কিন্তু  
+4. Warning
+
+single property echo kora jai
+
+$this->data = [10,20,30,'Rakib','Siam',25.22,true];
+        echo $this->data;
+
+-----------------------------------------------------------------------------------------------
+$this->data = [10,20,30,'Rakib','Siam',25.22,true];
+        foreach($this->data as $item)
+        {
+            echo $item.' ';
+        }
+---------------------------------------------------------------------------------------------------
+
+
+$this->student = ['name' => 'Siam', 'email' => 'siam@gmail.com','mobile'=> '01332323232'];
+
+
+        echo $this->student[0];
+----------------------------------------------------------------------------------------------------
+
+numeric array
+associated array
+
+multidimentional array
+
+----------------------------------------------------------------------------------------
+
+$this->student = [
+            'name' => 'Siam',
+            'email' => 'siam@gmail.com',
+            'mobile'=> '01332323232'
+        ];
+
+
+        echo $this->student['name'];
+----------------------------------------------------------------------------------------------
+
+
+$this->student = [
+            0=> [
+                'name'      => 'Siam',
+                'email'     => 'siam@gmail.com',
+                'mobile'    => '01332323232'
+            ],
+            1=> [
+                'name'      => 'Siam',
+                'email'     => 'siam@gmail.com',
+                'mobile'    => '01332323232'
+            ],
+            2=> [
+                'name'      => 'Siam',
+                'email'     => 'siam@gmail.com',
+                'mobile'    => '01332323232'
+            ]
+        ];
+
+
+        echo $this->student['name'];
+------------------------------------------------------------------------------
+
+$this->students = [
+            0=> [
+                'name'      => 'Siam',
+                'email'     => 'siam@gmail.com',
+                'mobile'    => '01332323232'
+            ],
+
+            1=> [
+                'name'      => 'Ratul',
+                'email'     => 'ratul@gmail.com',
+                'mobile'    => '0122323662'
+            ],
+
+            2=> [
+                'name'      => 'Nasrin',
+                'email'     => 'nasrin@gmail.com',
+                'mobile'    => '01943244232'
+            ]
+        ];
+
+
+        echo $this->students[0]['name'];
+
+------------------------------------------------------------------------------------------------
+
+
+   $this->students = [
+            0=> [
+                'name'      => 'Siam',
+                'email'     => 'siam@gmail.com',
+                'mobile'    => '01332323232'
+            ],
+
+            1=> [
+                'name'      => 'Ratul',
+                'email'     => 'ratul@gmail.com',
+                'mobile'    => '0122323662'
+            ],
+
+            2=> [
+                'name'      => 'Nasrin',
+                'email'     => 'nasrin@gmail.com',
+                'mobile'    => '01943244232'
+            ]
+        ];
+
+
+        
+
+
+        foreach($this->students as $student)
+        {
+            echo $student['name'].' '.$student['email'].' '.$student['mobile'].'<br/>';
+        }
+
+=====================================================================================================================================
+
+price name discription
+training array
+==========================================================================================================================================
+
+HomeWork
+=================================================
+
+
+Product Array
+----------------
+Name , Price , Description
+
+Training Array
+-----------------------------------
+starting day price, name
+
+======================================================================================
+
+
+
+<table border="1" width="700">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
+        </tr>
+
+        <?php foreach($students as $student) { ?>
+            <tr>
+                <td><?php echo $student['name'];?></td>
+                <td><?php echo $student['email'];?></td>
+                <td><?php echo $student['mobile'];?></td>
+            </tr>
+            <?php } ?>
+    
+    </table>
+
+============================================================================================================
+
+HomeWork
+
+=========================================================================================================
+
+1. PHP Project
+2. Product Array create & Print
+===============================
+
+1.PHP Project
+2. Blog Array
+
+=========================================
+1.PHP Project
+2.student array 
+
+========================================
+
+1. PHP Project
+2. Training Array create & Print
+
+============================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
