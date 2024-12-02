@@ -1,0 +1,37 @@
+.container{
+    width: 400px;
+    height: 200px;
+    margin-bottom: 20px;
+    margin: 20px auto;
+}
+
+h1{
+    text-align: center;
+    font-weight: bold;
+}
+
+.hidden{
+    border: 1px solid black;
+    overflow: hidden;
+}
+
+.visible{
+    border: 1px solid green;
+    overflow: visible;
+}
+
+.scroll{
+    border: 1px solid green;
+    overflow: scroll;
+}
+
+.scroll-none{
+    border: 1px solid green;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+
+.auto{
+    border: 1px solid green;
+    overflow: auto;
+}

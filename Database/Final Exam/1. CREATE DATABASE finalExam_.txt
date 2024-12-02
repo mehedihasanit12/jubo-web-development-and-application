@@ -1,0 +1,82 @@
+1. CREATE DATABASE finalExam;
+
+2.
+CREATE TABLE author(
+    author_id int(3) PRIMARY KEY,
+    author_name varchar(30)
+    );
+
+CREATE TABLE publisher(
+    pub_id int(4) PRIMARY KEY,
+    pub_name varchar(40)
+    );
+
+CREATE TABLE reader(
+    reader_id int(4) PRIMARY KEY,
+    reader_name varchar(40),
+    phone int(11)
+    );
+
+
+CREATE TABLE book(
+    book_id int(4) PRIMARY KEY,
+    title varchar(40),
+    price decimal(50),
+    no_of_copy int(5),
+    author_id int(3),
+    pub_id int(3),
+    FOREIGN KEY (author_id) REFERENCES author(author_id),
+    FOREIGN KEY (pub_id) REFERENCES publisher(pub_id)
+    );
+
+CREATE TABLE loan(
+    loan_id int(3) PRIMARY KEY,
+    loan_date date,
+    reader_id int(3),
+    book_id int(3),
+    FOREIGN KEY (reader_id) REFERENCES reader(reader_id),
+    FOREIGN KEY (book_id) REFERENCES book(book_id)
+    );
+
+//Insert value into all table 
+
+INSERT INTO author VALUES(1,"Alamgir"),(2,"Mehedi"),(3,"Abu Bakkar");
+
+INSERT INTO publisher VALUES(11,"Dimik"),(22,"Popi"),(33,"Adhorsho");
+
+INSERT INTO reader VALUES(111,"Rudhro",018681900),(222,"Efat",01868190011),(333,"Zitu",018681922);
+
+
+
+INSERT INTO book VALUES(001,"Ami tumai valobashi mona",1000,100,1,11);
+INSERT INTO book VALUES(002,"DBMS",1000,100,1,11);
+
+INSERT INTO book VALUES(003,"C Programming",1000,100,2,22);
+INSERT INTO book VALUES(004,"C++",1000,100,3,33);
+
+
+
+
+
+INSERT INTO loan VALUES(101,'2024-12-15',111,001);
+INSERT INTO loan VALUES(102,'2024-12-15',222,002);
+INSERT INTO loan VALUES(103,'2024-12-15',333,003);
+INSERT INTO loan VALUES(104,'2024-12-15',111,004);
+
+
+
+
+
+
+
+
+
+Ans to the question no - 4 :
+i).          SELECT  reader.reader_name,reader.phone FROM reader JOIN loan ON reader.reader_id = loan.reader_id;
+
+ii).  SELECT book.title FROM book;
+iii). SELECT publisher.pub_name FROM publisher;
+4). SELECT author.author_name,book.title FROM author,book WHERE author.author_id = book.author_id;
+
+
+SELECT author.author_name,book.title FROM author JOIN book ON author.author_id = book.author_id;

@@ -1,0 +1,69 @@
+
+
+
+/* Navbar Menu color */
+
+
+ul a{
+    color: white !important;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+/* Navbar Menu color */
+
+/* Bacground Color Section */
+
+.bg{
+    background-color: #2E4AE1;
+    padding: 20px;
+}
+
+
+/* Bacground Color Section */
+
+
+.nav-item{
+    margin-left: 57px;
+    padding: 0 10px;
+    
+}
+
+.active{
+    background-color: #1891FF;
+}
+
+
+/* Hero Section Start*/
+
+
+.hero-left h1{
+    font-size: 63px;
+}
+
+.hero-left{
+    text-align: left;
+}
+
+/* Hero Section End*/
+
+
+
+
+
+
+/* About Section Start */
+
+.about-us{
+    height: 300px;
+}
+
+
+/* About Section End */
+
+.card h1{
+    font-size: 30px;
+}

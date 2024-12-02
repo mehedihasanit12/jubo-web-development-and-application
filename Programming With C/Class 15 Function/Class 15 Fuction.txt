@@ -1,0 +1,110 @@
+28.11.2024
+----------------------------------------------------------------
+
+
+Return type  function name(parameter,... int x , int y)
+
+{
+
+
+	return value;
+
+}
+
+=====================================================================
+
+#include <stdio.h>
+
+
+void fun(){
+
+    printf("Hello World\n");
+
+}
+
+void sum(int a, int b){
+        int s = a+b;
+        printf("Summation is %d\n",s);
+    }
+
+int sum2(int a, int b){
+
+    int c = a + b;
+
+
+    return c;
+
+}
+
+int main()
+{
+    sum(10,20);
+    sum(100,200);
+
+    fun();
+
+
+    int num1 = 30;
+    int num2 = 50;
+    int total = sum2(num1,num2);
+
+    printf("%d\n",total);
+
+    int multi = total * 2;
+
+    printf("%d\n",multi);
+}
+
+==================================================================================================
+
+Recurtion
+=======================================================================
+ফাংশন নিজেকে নিজে কল করা||||||||||||||||||||||||||||||||||||||||||
+=======================================================================
+
+
+#include <stdio.h>
+
+int factorial(int n){
+
+    if(n<=1){
+        return 1;
+    }
+    else{
+        return n*factorial(n-1);
+    }
+
+}
+
+int main()
+{
+    int a = 5;
+    int fact = factorial(a);
+    printf("Factorial of %d is %d",a,fact);
+}
+======================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

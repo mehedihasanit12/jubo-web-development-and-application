@@ -1,0 +1,9 @@
+Ans to the question no - 4 :
+i).    SELECT  reader.reader_name,reader.phone FROM reader JOIN loan ON reader.reader_id = loan.reader_id;
+
+ii).   SELECT book.title FROM book;
+iii).  SELECT publisher.pub_name FROM publisher;
+
+iv.   SELECT author.author_name,book.title FROM author JOIN book ON author.author_id = book.author_id;
+
+
