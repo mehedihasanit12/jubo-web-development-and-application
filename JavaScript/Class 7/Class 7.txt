@@ -1,0 +1,313 @@
+08.12.2024
+-------------------------------------------------------
+9:27 AM
+---------
+2nd Semester First Class
+--------------------------------
+
+
+https://service.intercellcd.com/
+
+
+mr.@intercellcd.com
+
+sails limited
+
+https://sailslimited.com/
+
+https://sangbadekhon.com/
+
+
+----------------------------------------------------------------------------------
+
+Front End - HTML, CSS, JS
+
+Backend - PHP, JavaScript (NodeJS)
+		PHP,
+
+Database - MySQL, MongoDB
+
+====================================================================================
+continue overview-----------------------------------
+
+10:26 AM continue overview------------------------
+
+--------------------------------------------------
+
+10:30 AM continue overview--------------------------
+
+class start 10:44 AM ----------------------------and কেউ আগের ক্লাস করেনি, Xammp এ সমস্যা, মনিটর চলে না.......................xammp কিভাবে রান করে ভুলে গেছে 
+                                                    ফোল্ডার কিভাবে ওপেন করে ভুলে গেছে। 
+
+continue problem 10:55 AM--------------------------------------
+
+
+
+again class start 10:57 AM--------------------------------------
+
+
+
+PHP-Project
+===========
+
+
+1. Project folder inside htdocs folder : php-project
+2. app, asset,views , composer.json, index.php
+3. app -> classes
+4. HelloWorld Class
+
+5.
+
+------------------------------------
+own class object----- $this
+---------------------------------
+helper method function
+
+app- helpers folder- helpers.php
+------------------------------------------------
+
+
+<?php
+
+
+function view($fileName, $data = [], $print = true)
+{
+    $output = "View not found";
+    $filePath = "views/".$fileName.".php";
+    if(file_exists($filePath))
+    {
+        ob_start();
+        extract($data);
+        include $filePath;
+        $output = ob_get_clean();
+    }
+
+    if($print)
+    {
+        print $output;
+    }
+}
+
+=================================================================================
+"autoload": {
+        "psr-4": {
+            "App\\":"app//"
+        },
+        "files": ["app/helpers/helpers.php"]
+    }
+======================================================================================
+
+terminal command -  composer update
+
+------------------------------------------------------------------------------------------
+
+echo , print -print return true
+--------------------------------------
+
+HelloWorld.php file----- return view('home', ['students' => $this->students]);
+
+=============================================================================================================
+
+2:28 PM After Lanch----------
+------------------------------------
+
+
+public function about()
+        {
+            return view('about');
+        } helloworld.php file a
+------------------------------------------------------------------------
+
+
+decision making file - page navigation - routing
+
+--------------------------------------------------------
+
+
+web.php file
+
+
+super global array---------------$_GET
+
+
+echo '<pre>';
+        print_r($this->students);
+
+--------------------------------------
+
+echo '<pre>';
+        var_dump($this->students);
+--------------------------------------------------
+==============================================================
+<ul>
+        <li><a href="web.php?page=home">Home</a></li>
+        <li><a href="web.php?page=about">About</a></li>
+        <li><a href="">Contact</a></li>
+    </ul>
+====================================================================
+
+web.php?page=about------------------- ? means $_GET Array  page means index about value  ? = $_GET['page'] = 'home';
+?page=home&&a=b 
+
+echo '<pre>';
+print_r($_GET);
+
+Array
+(
+    [page] => home
+)
+-----------------------------------------------------------------------
+=========================================================================================================================
+<?php
+
+
+require_once "vendor/autoload.php";
+use App\classes\HelloWorld;
+
+
+$helloWorld = new HelloWorld();
+
+
+if($_GET['page'] == 'home')
+{
+    $helloWorld->index();
+}
+elseif($_GET['page' == 'about'])
+{
+    $helloWorld->about();
+}
+
+========================================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
