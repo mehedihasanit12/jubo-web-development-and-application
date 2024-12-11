@@ -14,6 +14,9 @@
         <li><a href="web.php?page=portfolio">Portfolio</a></li>
     </ul>
 
+    <address>
+        lor
+    </address>
 
     <h1>This is home page</h1>
 
@@ -33,7 +36,7 @@
                 <td><?php echo $student['mobile'];?></td>
             </tr>
             <?php } ?>
-    
+
     </table>
 </body>
 </html>
