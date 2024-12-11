@@ -1,0 +1,201 @@
+11.12.2024
+------------------------------------------------
+9:06 AM
+------------
+
+9:30 AM
+---------
+class start- 9:39 AM
+
+heackathon contest
+
+user input ---------
+
+
+static -------------- self::    ClassName::method;      --------------::-----scope resulation oparetor
+non static ------------- $this  new ClassName();           ----------- $this --- own class object
+
+==========================================================================================
+
+
+static function এর ভিতর non static ব্যবহার করা যাবে না।
+non static function এর ভিতর static ব্যবহার করা যাবে 
+
+------------------------------------------------------------------------------------
+
+10:28 AM
+------------
+
+1.write method home class
+2. view file create detail.php
+3. web.php route create
+4. home.php file href
+
+------------------------------------------------------------------------------------
+
+blog class
+--------
+
+public static function getBlogById($id)
+    {
+        foreach (self::getAllBlog() as $blog)
+        {
+            if ($blog['id'] == $id)
+            {
+                return $blog;
+                break;
+            }
+        }
+    }
+==================================================================
+
+Read more-------------- page , id
+Web.php----------------- home class detail (id)
+Blog--getBlogById----(id)
+home-detail(id)
+
+----------------------------------------------------------------------
+
+<?php
+
+
+namespace App\classes;
+
+
+class FullName
+{
+    public $firstName, $lastName, $fullName;
+
+    public function __construct()
+    {
+        $this->firstName    = "Rakib";
+        $this->lastName     = "Khan";
+    }
+    public function index()
+    {
+        $this->fullName = $this->firstName.' '.$this->lastName;
+        echo $this->fullName;
+    }
+}
+--------------------------
+
+
+Form / link --------- $_POST/$_GET
+
+
+echo '<pre>';
+    print_r($_POST);
+echo '</pre>';
+
+
+============================================
+
+isset();
+
+-----------------------------------------------
+
+
+_construct
+
+
+<?php echo isset($_GET['result']) ? $_GET['result'] : ''; ?>
+
+
+--------------------------------------------------------------------------------------------------
+
+HOMEWORK
+
+-----------------------------------------------
+
+First Number 
+
+Second Number
+
+Result 
+
+Submit
+
+
+Your choice 0 + 0 - 0 *
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
