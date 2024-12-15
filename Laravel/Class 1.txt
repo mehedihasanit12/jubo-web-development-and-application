@@ -1,0 +1,50 @@
+15.12.2024
+---------------------
+
+xampp 8.12, composer ডাউনলোড দিতে দিতে 
+
+
+11:28 AM
+--------------------------------------------------------------
+
+laravel install command-------- composer global require laravel/installer
+laravel project create command------ laravel new example-app
+cd example-app
+---------------------------------------------------------
+database create
+.env file db_database এ ডাটাবেসের নাম
+------------------------------------------------------
+
+php artisan migrate
+php artisan config:clear
+php artisan serve
+============================================
+
+http://127.0.0.1:8000/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
