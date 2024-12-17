@@ -1,0 +1,437 @@
+17.12.2024
+-------------------------------------------
+9:29 AM
+--------
+
+last class dive into laravel
+about php
+
+9:54 AM
+----------
+
+about.php তে কার্ড নেওয়া।
+-----------------------------
+My Calculator Page Design
+--------------
+Create Calculator Class
+------------
+10:35 AM
+-----
+
+<?php
+
+
+namespace App\classes;
+
+
+class Calculator
+{
+    public $firstNumber, $secondNumber, $choice, $result;
+
+    public function __construct()
+    {
+        $this->firstNumber = 10;
+        $this->secondNumber = 20;
+        $this->choice = '+';
+    }
+
+    public function index()
+    {
+        echo $this->firstNumber + $this->secondNumber;
+    }
+}
+=======================================================================
+
+
+Debugging 
+==============
+
+echo '<pre>';
+print_r($_POST);
+echo '<pre>';
+
+====================
+
+
+Calculator.php Class
+----------------------
+
+
+<?php
+
+
+namespace App\classes;
+
+
+class Calculator
+{
+    public $firstNumber, $secondNumber, $choice, $result;
+
+    public function __construct($post)
+    {
+        $this->firstNumber  = $post['first_number'];
+        $this->secondNumber = $post['second_number'];
+        $this->choice       = $post['choice'];
+    }
+
+    public function index()
+    {
+        switch ($this->choice)
+        {
+            case '+':
+                $this->result = $this->addition();
+                break;
+            case '-':
+                $this->result = $this->subtraction();
+                break;
+            case '*':
+                $this->result = $this->multiplication();
+                break;
+            case '/':
+                $this->result = $this->division();
+                break;
+            case '%':
+                $this->result = $this->remainder();
+                break;
+        }
+        header("Location: web.php?page=about&&result=$this->result");
+    }
+
+    public function addition()
+    {
+        $this->result = $this->firstNumber + $this->secondNumber;
+        return $this->result;
+    }
+
+    public function subtraction()
+    {
+        $this->result = $this->firstNumber - $this->secondNumber;
+        return $this->result;
+    }
+
+    public function multiplication()
+    {
+        $this->result = $this->firstNumber * $this->secondNumber;
+        return $this->result;
+    }
+
+    public function division()
+    {
+        $this->result = $this->firstNumber / $this->secondNumber;
+        return $this->result;
+    }
+
+    public function remainder()
+    {
+        $this->result = $this->firstNumber % $this->secondNumber;
+        return $this->result;
+    }
+}
+
+============================================================================
+
+value="<?php echo isset($_GET['result']) ? $_GET['result'] : ''; ?>"
+------------------------------------------------------------------------------
+
+11:26 AM
+--------------
+Break
+--------------
+
+After Break
+
+create series program in gallery.php 
+--------------------------------------
+
+create Series Class
+------------------------
+
+
+<?php
+
+
+namespace App\classes;
+
+
+class Series
+{
+    public $startingNumber, $endingNumber, $result, $i;
+    
+    public function __construct()
+    {
+        $this->startingNumber = 1;
+        $this->endingNumber = 5;
+    }
+    
+    public function index()
+    {
+        for ($this->i = $this->startingNumber; $this->i <= $this->endingNumber; $this->i++)
+        {
+            echo $this->i.' ';
+        }
+    }
+}
+
+=========================================================================================
+
+<?php
+
+
+namespace App\classes;
+
+
+class Series
+{
+    public $startingNumber, $endingNumber, $result, $i;
+
+    public function __construct($post)
+    {
+        $this->startingNumber = $post['starting_number'];
+        $this->endingNumber = $post['ending_number'];
+
+    }
+
+    public function index()
+    {
+        for ($this->i = $this->startingNumber; $this->i <= $this->endingNumber; $this->i++)
+        {
+            $this->result .= $this->i.' ';
+        }
+        header("Location: web.php?page=gallery&&result=$this->result");
+    }
+}
+================================================================================
+
+
+নতুন বিষয় =  $this->result .= $this->i.' ';
+
+
+==================================================================================
+
+
+2:28 PM
+-----------
+
+Authentication------------ পরে দেখানো হবে। এখন oop 
+---------------
+
+=======================================================================
+
+Class
+Object
+property
+method
+namespace
+
+
+===========================================
+Encapsulation----------------------public,private, protected,       -
+Inheritance------------------- child--- পাবে public, protected. 
+Polymorphisom
+Interface = শুধু মেথড থাকে method থাকে মেথডের বডি থাকে না।- object তৈরি করা যায় না। class ভিতরে ইমপ্লিমেন্ট করে কাজ করা যায়
+Abstract class
+Trait
+Static Property & Method
+
+========================================================
+
+HOMEWORK
+----------
+
+1.mehedi-php
+
+2.helpers class load view with bootstrap
+3.3 page home about contact
+homepage---training information----title,instructor name,description,img, starting date 5 ta
+detail page
+about, contact--click form -------- num one , num two , num three, তিনটার ভিতরে বড় কোনটা--- sort নাম্বার সাজানো।
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
