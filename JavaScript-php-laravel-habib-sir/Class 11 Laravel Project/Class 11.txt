@@ -1,0 +1,194 @@
+18.12.2024
+------------------------------
+
+9:28 AM
+-------
+
+abstrac Class
+
+alt+enter interface method add in class
+
+একটা ক্লাস একাধিক ইন্টারফেস এড করা যাচ্ছে.
+ক্লাসের মেথড গুলা আগে ইন্টারফেসে রাখতে হয়।
+========================================================================
+
+Abstract Class
+================
+
+abstract class Teacher
+abstract method------ public abstract function test();
+non-abstract method----------
+===================================================================
+
+Trait
+============
+trait Category
+
+use App\classes\Category;
+{
+    use Category;
+
+=======================================
+
+static method& property
+
+==============================================
+
+11:00 AM
+========
+break
+------
+
+After Break
+=============
+
+11:21 AM
+-----------
+
+
+Laravel
+==========
+
+plan-------oop
+code--------mvc --model,view,controller , Hmvc , repository pattern
+
+framework- pre defined strcucture
+rasmus schandorff 1996 2000
+
+2004 php framework
+2012 laravel
+
+
+bellal hossen vuei;ya
+============================================================================================
+Laravel -11
+
+
+
+
+1.node js
+2.git
+3. composer
+4. 7 zip
+5. php- 8.2
+
+-------------------------------------------------------------
+12:30 PM
+----------
+
+command---
+
+composer create-project laravel/laravel my-app
+
+
+
+=======================================================
+
+Model-----------data
+view--------view
+controller----------logic
+
+
+controller-------web.php---------index.php
+
+================================================
+2:37 PM
+---------
+
+create controller class
+
+php artisan make:controller WelcomeController
+
+=================================================================
+
+
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class WelcomeController extends Controller
+{
+    public function index()
+    {
+        return view('home');
+    }
+}
+
+===================================================
+web.php
+---------
+
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\WelcomeController;
+
+Route::get('/', [WelcomeController::class, 'index']);
+================================================================
+
+
+<?php echo asset('/')?>
+{{ asset('/') }}js/bootstrap.bundle.js">
+
+{{}}== <?php ?> == blade
+
+<li class="nav-item"><a href="{{ url('/about') }}" class="nav-link">About</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
