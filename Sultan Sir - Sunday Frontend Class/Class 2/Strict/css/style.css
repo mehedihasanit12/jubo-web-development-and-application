@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+body{
+    font-family: "Lato", serif;
+}
+
 *{
     padding: 0px;
     margin: 0px;
@@ -225,6 +231,28 @@
 
 .portfolio-section .portfolio-inner{
     margin-bottom: 15px;
+    position: relative;
+}
+
+.port-hover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 95%;
+    background: #1697E6;
+    height: 260px;
+    opacity: 0.7;
+    display: none;
+}
+
+.port-icon{
+    position: absolute;
+    top: 40%;
+    left: 40%;
+}
+
+.portfolio-section .portfolio-inner:hover .port-hover{
+    display: block;
 }
 
 
@@ -239,14 +267,17 @@
 /* Footer Start */
 
 .footer-section{
-    padding: 80px 0;
+    width: 100%;
+    float: left;
+    background: #F5F9F9;
+    padding: 20px 0;
 }
 
 .footer-icon{
     text-align: right;
 }
 
-.footer-section ul li{
+.footer-icon ul li{
     list-style: none;
     display: inline-block;
     background: #15a4fa;
@@ -254,7 +285,7 @@
     padding: 11px;
 }
 
-.footer-section i{
+.footer-icon i{
     color: #fff;
 }
 
