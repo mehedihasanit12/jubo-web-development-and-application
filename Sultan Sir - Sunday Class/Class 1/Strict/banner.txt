@@ -1,0 +1,22 @@
+div class="banner-section">
+
+        <div class="container">           
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="banner-inner">
+                        <h1>STRICT</h1>
+                        <p>
+                            STRICT is a responsive theme with a a clean and minimal look.
+                        </p>
+                        <a href="#" class="btn-info">Call to Action</a>
+                        <div class="icon">
+                            <img src="img/Icon.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+    </div>
