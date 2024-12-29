@@ -1,0 +1,481 @@
+24.12.2024
+==================================
+9:09 AM
+----------
+
+
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\Blog;
+
+class WelcomeController extends Controller
+{
+    public $blogs, $blog, $result;
+
+    public function index()
+    {
+        $this->blogs = Blog::getAllBlog();
+        return view('home', ['blogs' => $this->blogs]);
+    }
+
+    public function about()
+    {
+        return view('about');
+    }
+
+    public function contact()
+    {
+        return view('contact');
+    }
+
+    public function portfolio()
+    {
+        return view('portfolio');
+    }
+
+    public function gallery()
+    {
+        return view('gallery');
+    }
+
+    public function detail($id)
+    {
+        $this->blog = Blog::getBlogById($id);
+        return view('detail', ['blog' => $this->blog]);
+    }
+
+    public function makeFullName(Request $request)
+    {
+        $this->result = $request->first_name.' '.$request->last_name;
+        return back()->with('result', $this->result);
+    }
+
+    public function myCalculator(Request $request)
+    {
+        $this->firstNumber = $request->first_number;
+        $this->secondNumber = $request->second_number;
+
+        switch ($request->choice)
+        {
+            case '+':
+                $this->result = $this->addition($request);
+                break;
+            case '-':
+                $this->result = $this->subtraction($request);
+                break;
+            case '*':
+                $this->result = $this->multiplication($request);
+                break;
+            case '/':
+                $this->result = $this->division($request);
+                break;
+            case '%':
+                $this->result = $this->remainder($request);
+                break;
+        }
+
+        return back()->with('calculator-result', $this->result);
+
+    }
+
+    public function addition($request)
+    {
+        $this->result = $request->first_number + $request->second_number;
+        return $this->result;
+    }
+
+    public function subtraction($request)
+    {
+        $this->result = $request->first_number - $request->second_number;
+        return $this->result;
+    }
+
+    public function multiplication($request)
+    {
+        $this->result = $request->first_number * $request->second_number;
+        return $this->result;
+    }
+
+    public function division($request)
+    {
+        $this->result = $request->first_number / $request->second_number;
+        return $this->result;
+    }
+
+    public function remainder($request)
+    {
+        $this->result = $request->first_number % $request->second_number;
+        return $this->result;
+    }
+
+
+}
+
+==========================================================================================================
+
+10:18 AM
+-----------
+
+
+software 
+
+data এর জন্য সফটওয়্যার 
+
+Database 2 types--------
+1. Relational 2.non Relational
+
+
+12:08 PM
+----------
+MySQL ------------
+
+database--------------------
+
+host name
+username
+password
+database name
+
+
+INSERT INTO students (name, email, mobile, address) VALUES ('Rubel', 'rubel@gmail.com', '017324234523', 'Jhinaydah'); 
+
+
+1:07 PM
+------------
+database create -----my_app
+table-----students
+
+menu add -------- add student--manage student
+  student controller create
+
+=============================================================================
+                       index.php
+				  ||
+                       web.php
+				  ||
+     database--Model--Controller--view
+==============================================================================
+
+
+-------StudentController--------------------
+
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class StudentController extends Controller
+{
+    public function index()
+    {
+        return view('student.index');
+    }
+
+    public function create()
+    {
+        return view('student.create');
+    }
+}
+
+========================================================
+
+view folder -----------
+
+student.index--------- folder--student  file index , create
+
+------------------------------------------------------------
+
+create.blade, index.blade
+
+--------------------------------
+
+index.blade
+============
+
+
+@extends('master')
+
+@section('title')
+    Add Student Page
+@endsection
+
+@section('body')
+
+    <section class="py-5 bg-primary-subtle">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 mx-auto">
+                    <div class="card">
+                        <div class="card-header">
+                            Add Student Form
+                        </div>
+                        <div class="card-body">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+@endsection
+====================================================================================
+
+
+@extends('master')
+
+@section('title')
+    Add Student Page
+@endsection
+
+@section('body')
+
+    <section class="py-5 bg-primary-subtle">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 mx-auto">
+                    <div class="card">
+                        <div class="card-header">
+                            Add Student Form
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>SL NO</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Mobile</th>
+                                        <th>Address</th>
+                                        <th>Image</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>asd</td>
+                                        <td>asd</td>
+                                        <td>asd</td>
+                                        <td>asd</td>
+                                        <td>asd</td>
+                                        <td>
+                                            <a href="" class="btn btn-success btn-sm">Edit</a>
+                                            <a href="" class="btn btn-danger btn-sm">Delete</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+@endsection
+===============================
+
+@extends('master')
+
+@section('title')
+    Add Student Page
+@endsection
+
+@section('body')
+
+    <section class="py-5 bg-primary-subtle">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 mx-auto">
+                    <div class="card">
+                        <div class="card-header">
+                            Add Student Form
+                        </div>
+                        <div class="card-body">
+                            <form action="" method="POST">
+                                <div class="row mb-3">
+                                    <label class="col-md-3">Student Name</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="name"/>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label class="col-md-3">Student Email</label>
+                                    <div class="col-md-9">
+                                        <input type="email" class="form-control" name="email"/>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label class="col-md-3">Student Mobile</label>
+                                    <div class="col-md-9">
+                                        <input type="number" class="form-control" name="mobile"/>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label class="col-md-3">Student Image</label>
+                                    <div class="col-md-9">
+                                        <input type="file" class="form-control" name="image"/>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label class="col-md-3">Student Address</label>
+                                    <div class="col-md-9">
+                                        <textarea class="form-control" name="address"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label class="col-md-3"></label>
+                                    <div class="col-md-9">
+                                        <input type="submit" class="btn btn-success" value="Create New Student"/>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+@endsection
+===========================================
+
+
+//student.index, student.create
+
+Route::get('/student', [StudentController::class, 'index'])->name('student.index');
+
+Route::get('/student/create', [StudentController::class, 'create'])->name('student.create');
+
+
+===================================================================================
+
+
+master.blade
+------------
+
+
+<li class="nav-item"><a href="{{ route('student.create')}}" class="nav-link">Add Student</a></li>
+<li class="nav-item"><a href="{{ route('student.index')}}" class="nav-link">Manage Student</a></li>
+
+=======================================================================================
+
+----------
+3:23 PM
+----------
+
+
+laravel 4 class---
+
+1. controller----------------logic
+2. model-----------------------data
+3. middleware-------------------security
+4 migration------------------ create table
+
+===============================================================
+
+php artisan migrate
+-----------
+php artisan make:model Student -m
+
+================================================================
+
+
+Schema::create('students', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('email');
+            $table->string('mobile');
+            $table->text('image');
+            $table->text('address');
+            $table->timestamps();
+        });
+
+=========================================================================
+
+php artisan migrate
+---------------------------------------------
+
+
+public function store(Request $request)
+    {
+        $this->student = new Student();
+        $this->student->name = $request->name;
+        $this->student->email = $request->email;
+        $this->student->mobile = $request->mobile;
+        $this->student->image = $request->image;
+        $this->student->address = $request->address;
+        $this->student->save();
+        
+        return 'success';
+    }
+
+----------------------------------------------------------------------------------
+
+Route::post('/student/store', [StudentController::class, 'store'])->name('student.store');
+
+----------------------------------------------------------------------------------------
+
+<form action="{{route('student.store')}}" method="POST">
+                                @csrf
+=========================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,333 @@
+23.12.2024
+------------
+
+
+Route::get('/', [WelcomeController::class, 'index']); এটা রিকমন্ডেড না যে url ধরে ফাংশন কল করা।
+------------------------------------------------------------------------------------------------------
+
+Mastering concept
+
+create view file -------- master.blade.php
+-------------------------------------------------------------
+
+home.blade code master.blade এ পেস্ট 
+সব ভিউ কোড কাট
+----------------------
+
+home.blade ------------ @extends('master')
+==================================================
+
+@extends()============ directive ---------- blade engine 
+
+হোম থেকে কিছু মাস্টারে পাঠাতে পারবো extends এর কারণে
+
+<title>@yield('title')</title>
+
+home.blade
+---------------------
+
+@section('title')
+    Home Page
+@endsection   
+====================================================
+
+@section('body')
+    <section class="py-5 bg-info-subtle">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1>This is home page</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+@endsection   
+
+======================================================
+
+@section('body')
+
+    <section class="py-5 bg-primary-subtle">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>This is about page</h1>
+                </div>
+                <div class="col-md-6">
+                    <h1>This is about page</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+@endsection
+
+=========================================================== 
+
+php artisan make:model Blog
+--------------------------------------------
+
+database ------------- 2 class 
+
+Ouery Builder, Elequent ORM
+SQL-----------  ে এখন আর row sql কেউ ব্যবহার করেনা। Query builder , elequent ORM ক্লাস দিয়ে করা হয়।
+elequent ORM------------ international ----java, c#, py 
+
+elequent ORM ---limited====== table join 4 এর বেশি হলে সিস্টেম স্লো হয়ে যায়
+
+query builder-------- 
+
+=======================================================================================
+
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Blog extends Model
+{
+    public static $blogs = [];
+
+    public static function getAllBlog()
+    {
+        self::$blogs = [
+            0=> [
+                'id'            => 1,
+                'title'         => 'This is blog title',
+                'description'   => 'This is blog description',
+                'image'         => 'img/pic 2.jpg'
+            ],
+            1=> [
+                'id'            => 2,
+                'title'         => 'This is blog title',
+                'description'   => 'This is blog description',
+                'image'         => 'img/pic 3.jpg'
+            ],
+            2=> [
+                'id'            => 3,
+                'title'         => 'This is blog title',
+                'description'   => 'This is blog description',
+                'image'         => 'img/pic 4.jpg'
+            ],
+        ];
+		return self::$blogs;
+    }
+}
+
+===============================================================================================
+11:14 AM
+===========
+
+public $blogs;
+    
+    public function index()
+    {
+        $this->blogs = Blog::getAllBlog();
+        return view('home', ['blogs' => $this->blogs]);
+    }
+
+================================================================
+view('home', ['blogs' => $this->blogs]); এটা ছাড়াও দুটি বিষয় আছে compect with
+
+==============================================================================
+
+12:09 PM
+===========
+create detail.blade
+
+controller
+----------
+public function detail()
+    {
+        return view('detail');
+    }
+
+=========================================
+Route::get('/detail',[WelcomeController::class, 'detail']);
+
+<a href="{{url('/detail')}}" class="btn btn-success">Read More</a>
+------------------------------------------------------------------------------
+
+public static function getBlogById($id)
+    {
+        foreach (self::getAllBlog() as $blog)
+        {
+            if ($blog['id']==$id)
+            {
+                return $blog;
+            }
+        }
+    }
+=====================================================================================
+public function detail($id)
+    {
+        $this->blog = Blog::getBlogById($id);
+        return view('detail', ['blog' => $this->blog]);
+    }
+======================================================================
+
+Route::get('/detail/{id}',[WelcomeController::class, 'detail']);
+
+----------------------------------------------------------------------------------
+
+Route::get('/detail/{id}',[WelcomeController::class, 'detail'])->name('detail');
+
+--------------------------------------------------------------------------------------
+.....])->name('detail');
+======================================================================================
+<a href="{{route('detail', ['id' => $blog['id']])}}" class="btn btn-success">Read More</a>
+----------------------------------------------------------------------------------------------
+<a href="{{ route('home')}}"
+
+
+502,509
+
+==================================================================================================================
+
+about page----------- form create
+
+
+public function makeFullName()
+    {
+        echo '<pre>';
+        print_r($_POST);
+        exit();
+    }
+
+
+=============================================================================================================
+website hacking 
+1. url 2. form 3. cpanel
+
+form-------- 2 token --clint server -- 419 page expired ------- CSRF Token
+
+@csrf--------------token genarate------------- [_token] => aLng5qgPVrf2RBlOumnqyNPD7PzMXsoqe2EAfn0q
+-----------------------------------------------------------------
+---------------------------------------------------------------------
+
+Array
+(
+    [_token] => aLng5qgPVrf2RBlOumnqyNPD7PzMXsoqe2EAfn0q
+    [first_name] => dfsdfs
+    [last_name] => fsdfsdf
+)
+
+================================================================
+
+use Illuminate\Http\Request; -------- $_POST থেকে ডাটা নিয়ে json object তৈরি করে রিকোয়েস্ট ক্লাস
+
+(Request--- class $request-------class object ----- laravel way)
+
+public function makeFullName(Request $request)
+    {
+        return $request;
+    }
+
+
+json viewer extention
+=======================================================================
+
+
+public function makeFullName(Request $request)
+    {
+        $this->result = $request-first_name.' '.$request->last_name;
+        return back()->with('result', $this->result);
+    }
+
+
+========================================================================
+
+session memory --- primary memory
+কুকিজ --------------secondary memory
+
+==========================================================================
+
+<input type="text" class="form-control" value="{{session('result')}}">
+
+------------------------------------------------------------------------------
+
+
+
+
+
+switch ($this->choice)
+        {
+            case '+':
+                $this->result = $this->addition();
+                break;
+            case '-':
+                $this->result = $this->subtraction();
+                break;
+            case '*':
+                $this->result = $this->multiplication();
+                break;
+            case '/':
+                $this->result = $this->division();
+                break;
+            case '%':
+                $this->result = $this->remainder();
+                break;
+        }
+
+        $this->result = $request->first_number + $request->second_number;
+        return back()->with('result', $this->result);
+
+
+
+
+public function addition()
+    {
+        $this->result = $request->first_number + $request->second_number;
+        return back()->with('result', $this->result);
+    }
+
+    public function subtraction()
+    {
+        $this->result = $request->first_number - $request->second_number;
+        return back()->with('result', $this->result);
+    }
+
+    public function multiplication()
+    {
+        $this->result = $request->first_number * $request->second_number;
+        return back()->with('result', $this->result);
+    }
+
+    public function division()
+    {
+        $this->result = $request->first_number / $request->second_number;
+        return back()->with('result', $this->result);
+    }
+
+    public function remainder()
+    {
+        $this->result = $request->first_number % $request->second_number;
+        return back()->with('result', $this->result);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
