@@ -1,0 +1,765 @@
+30.12.2024
+==============
+9:18 AM
+---------
+
+Step 1:
+=========================================
+
+
+Create New Project laravel-crud
+------------------------------------
+
+composer create-project laravel/laravel laravel-crud
+
+---------------------
+
+Step 2:
+==========================================
+mvc pattern create
+
+Create Controller 
+---------------------
+php artisan make:controller HomeController
+
+Step 3:
+==========================================
+
+controller থেকে হোম ভিই লোড
+
+----------------------------
+
+public function index()
+    {
+        return view('home.index');
+    }
+
+
+
+Step 4:
+==========================================
+
+create view----- home directory, index view file
+
+Step 5:
+==========================================
+
+views----- master view create
+
+
+Step 6:
+==========================================
+
+create mastering
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Laravel CRUD - @yield('title')</title>
+    <link rel="stylesheet" href="{{asset('/')}}css/bootstrap.css"/>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+
+        <div class="container">
+            <a href="" class="navbar-brand">Laravel CRUD</a>
+
+            <ul class="navbar-nav">
+                <li class="nav-item"><a href="" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="" class="nav-link">Add Student</a></li>
+                <li class="nav-item"><a href="" class="nav-link">Manage Student</a></li>
+            </ul>
+        </div>
+
+    </nav>
+
+    @yield('body')
+
+</body>
+</html>
+
+===========================================================================
+
+@extends('master')
+
+@section('title')
+    Home Page
+@endsection
+
+@section('body')
+
+    <section class="py-5 bg-info-subtle">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1>Welcome To Laravel CRUD APP</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+@endsection
+
+================================================================================
+
+
+
+
+
+
+Step 7:
+==========================================
+
+create routing
+
+web.php
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+
+Step 8:
+==========================================
+
+create StudentController
+
+
+public function index()
+    {
+        return view('student.index');
+    }
+    
+    public function create()
+    {
+        return view('student.create');
+    }
+
+Step 9:
+===========================================
+
+
+create views- student directory, index,create view file
+
+
+index.blade
+-------------
+
+
+@extends('master')
+
+@section('title')
+    Student Page
+@endsection
+
+
+@section('body')
+
+    <section class="py-5 bg-dark-subtle">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">
+                            All Student Info
+                        </div>
+
+                        <div class="card-body">
+                            <table class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>SL NO</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Mobile</th>
+                                        <th>Image</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td>01</td>
+                                        <td>Mehedi Hasan</td>
+                                        <td>mehedi@gmail.com</td>
+                                        <td>01676745677</td>
+                                        <td>94359435.jpg</td>
+                                        <td>
+                                            <a href="" class="btn btn-success btn-sm">Edit</a>
+                                            <a href="" class="btn btn-danger btn-sm">Delete</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+@endsection
+--------------------------------------------------------------------
+
+create.blade
+--------------
+@extends('master')
+
+@section('title')
+    Add Student Page
+@endsection
+
+
+@section('body')
+
+    <section class="py-5 bg-dark-subtle">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">
+                            Add Student Form
+                        </div>
+
+                        <div class="card-body">
+                            <form action="" method="POST">
+
+                                <div class="row mb-3">
+                                    <label for="" class="col-md-3">Student Name</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="name"/>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="" class="col-md-3">Student Name</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="name"/>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="" class="col-md-3">Student Email</label>
+                                    <div class="col-md-9">
+                                        <input type="email" class="form-control" name="email"/>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="" class="col-md-3">Student Mobile</label>
+                                    <div class="col-md-9">
+                                        <input type="number" class="form-control" name="mobile"/>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="" class="col-md-3">Student Image</label>
+                                    <div class="col-md-9">
+                                        <input type="file" class="form-control" name="image"/>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="" class="col-md-3">Student Address</label>
+                                    <div class="col-md-9">
+                                        <textarea name="address" class="form-control"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="" class="col-md-3"></label>
+                                    <div class="col-md-9">
+                                        <input type="submit" class="btn btn-success"/>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+@endsection
+============================================================================
+
+
+
+
+
+Step 10:
+===========
+
+Create Route for student
+
+//Student
+
+Route::get('/student/add', [StudentController::class, 'index'])->name('student.index');
+Route::get('/student/create', [StudentController::class, 'create'])->name('student.create');
+
+========================================
+
+Step 11:
+====================================================
+Create Database
+================
+laravel_crud
+
+.env file database add , config folder database.php ---- mysql add
+
+
+Step 12:
+===========
+
+command line: php artisan migrate
+
+ডাটাবেজে কিছু টেবিল তৈরি হবে
+
+
+Step 13:
+===========
+
+model and migration তৈরি : php artisan make:model Student -m
+
+
+
+Step 14:
+===========
+
+migration class------------------ create table 
+
+
+Step 15:
+===========
+
+terminal command: php artisan migrate .ডাটাবেজে টেবিল তৈরি হয়ে যাবে।
+
+
+Step 16:
+==========
+
+StudentController store method create
+--------------------------------------------------
+public function store(Request $request)
+    {
+        return $request;
+    }
+-----------------------------------------------
+
+Step 17:
+=========
+
+create route recive form data
+------------------------------
+
+Route::post('/student/store', [StudentController::class, 'store'])->name('student.store');
+
+
+Step 18:
+===========
+
+add form action
+-------------------
+
+<form action="{{route('student.store')}}" method="POST">
+                                @csrf
+------------------------------------
+
+
+Step 19:
+============
+
+
+Student Model
+---------------
+
+
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Student extends Model
+{
+    public static $student;
+    
+    public static function newStudent($request)
+    {
+        self::$student = new Student();
+        self::$student->name = $request->name;
+        self::$student->email = $request->email;
+        self::$student->mobile = $request->mobile;
+        self::$student->image = $request->image;
+        self::$student->address = $request->address;
+        self::$student->save();
+    }
+}
+---------------------------------------------------------
+
+ 
+self::$student->name = $request->name; ----------- mapping 
+
+
+মডেলের অবজেক্ট তৈরি করলে ওই মডেলের সাথে কানেক্টেড মাইগ্রেশন / টেবিলের কলাম নাম মডেলের প্রোপার্টি হয়ে যাবে।
+
+
+Step 20:
+=============
+
+StudentController
+----------------------
+
+public function store(Request $request)
+    {
+        Student::newStudent($request);
+        return back()->with('message', 'Student info save successfully.');
+    }
+
+---------------------------------------------------------------------------
+
+
+==================================================================================================
+================================                         ============================================
+=============================    Complete CRUD-----C         ==========================================
+=============================        12:32 PM                    =============================================
+=====================================================================================================
+=================================================================================================
+
+
+
+
+
+================ CRUD------ R=========================
+
+
+Step 1:
+==========
+
+StudentController
+----------------------
+
+
+public function index()
+    {
+        $this->students = Student::all();
+        return view('student.index', ['students' => $this->students]);
+    }
+
+
+$this->students = Student::all();---------- all() ---- elequent ORM
+
+DB----- qury builder, elequent ORM
+
+
+----------------------------------------------------------------------------------
+
+Step 2:
+===========
+
+<tbody>
+                                   @foreach($students as $student)
+                                    <tr>
+                                        <td>{{$loop->iteration}}</td>
+                                        <td>{{$student->name}}</td>
+                                        <td>{{$student->email}}</td>
+                                        <td>{{$student->mobile}}</td>
+                                        <td><img src="{{asset('/')}}{{$student->image}}" width="100" height="100" alt=""></td>
+                                        <td>
+                                            <a href="" class="btn btn-success btn-sm">Edit</a>
+                                            <a href="" class="btn btn-danger btn-sm">Delete</a>
+                                        </td>
+                                    </tr>
+                                   @endforeach
+
+===================================================================================================
+
+
+
+
+Row data , file data
+
+file data $_Post দিয়ে নেওয়া যায় না এর জন্যে গ্লোবাল এরে $_FILES
+
+
+
+Step 3:
+===========
+
+Student Model
+-------------------
+
+
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Student extends Model
+{
+    public static $student, $image, $imageName, $directory, $imageUrl;
+
+    public static function newStudent($request)
+    {
+        self::$image        = $request->file('image');
+        self::$imageName    = self::$image->setClientOrginalName();
+        self::$directory    = 'img/uploads';
+        self::$image->move(self::$directory, self::$imageName);
+        self::$imageUrl     = self::$directory.self::$imageName;
+
+        self::$student = new Student();
+        self::$student->name = $request->name;
+        self::$student->email = $request->email;
+        self::$student->mobile = $request->mobile;
+        self::$student->image = self::$imageUrl;
+        self::$student->address = $request->address;
+        self::$student->save();
+    }
+}
+
+=========================================================================
+
+
+<form action="{{route('student.store')}}" method="POST" enctype="multipart/form-data">
+                                @csrf
+
+
+
+=================================================================================================
+
+Edit
+======
+
+student controller
+----------------------
+
+
+public function edit()
+    {
+        return view('student.edit');
+    }
+
+=====================================
+view file create edit.
+--------------------------------------
+create route
+-----------------
+
+Route::get('/student/edit/{id}', [StudentController::class, 'edit'])->name('student.edit');
+
+index.blade
+-------------
+
+<a href="{{route('student.edit',['id' => $student->id])}}" class="btn btn-success btn-sm">Edit</a>
+
+public function edit($id)
+    {
+        $this->student = Student::find($id);
+        return view('student.edit', ['student' => $this->student]);
+    }
+
+=====================================================================================================================
+
+edit.blade
+------------------
+
+
+@extends('master')
+
+@section('title')
+    Edit Student Page
+@endsection
+
+
+@section('body')
+
+    <section class="py-5 bg-dark-subtle">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">
+                            Edit Student Form
+                        </div>
+
+                        <div class="card-body">
+                            <p class="text-success">{{session('message')}}</p>
+                            <form action="{{route('student.store')}}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <div class="row mb-3">
+                                    <label for="" class="col-md-3 fw-bold">Student Name</label>
+                                    <div class="col-md-9">
+                                        <input type="text" value="{{$student->name}}" class="form-control" name="name"/>
+                                    </div>
+                                </div>
+
+
+                                <div class="row mb-3">
+                                    <label for="" class="col-md-3 fw-bold">Student Email</label>
+                                    <div class="col-md-9">
+                                        <input type="email" value="{{$student->email}}" class="form-control" name="email"/>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="" class="col-md-3 fw-bold">Student Mobile</label>
+                                    <div class="col-md-9">
+                                        <input type="number" value="{{$student->mobile}}" class="form-control" name="mobile"/>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="" class="col-md-3 fw-bold">Student Image</label>
+                                    <div class="col-md-9">
+                                        <input type="file" class="form-control" name="image"/>
+                                        <img src="{{asset($student->image)}}" width="70" height="70">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="" class="col-md-3 fw-bold">Student Address</label>
+                                    <div class="col-md-9">
+                                        <textarea name="address" class="form-control">{{$student->address}}</textarea>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="" class="col-md-3"></label>
+                                    <div class="col-md-9">
+                                        <input type="submit" class="btn btn-success" value="Update Student Info"/>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+@endsection
+===============================================================================
+
+Student Model
+------------------
+
+public static function updateStudent($request, $id)
+    {
+        self::$student = Student::find($id);
+
+        if ($request->file('image'))
+        {
+            self::$image        = $request->file('image');
+            self::$imageName    = self::$image->getClientOriginalName();
+            self::$directory    = 'img/uploads/';
+            self::$image->move(self::$directory, self::$imageName);
+            self::$imageUrl     = self::$directory.self::$imageName;
+        }
+        else
+        {
+            self::$imageUrl = self::$student->image;
+        }
+
+        self::$student->name = $request->name;
+        self::$student->email = $request->email;
+        self::$student->mobile = $request->mobile;
+        self::$student->image = self::$imageUrl;
+        self::$student->address = $request->address;
+        self::$student->save();
+    }
+
+=====================================================================
+
+Student Controller
+----------------------
+
+
+public function update(Request $request, $id)
+    {
+        Student::updateStudent($request, $id);
+        return redirect('/student/add')->with('message', 'Student info update successfully.');
+    }
+===================================================================================
+
+create Route
+-----------
+
+Route::post('/student/update/{id}', [StudentController::class, 'update'])->name('student.update');
+
+===============================================================================
+
+Route call edit.blade view file 
+
+
+<form action="{{route('student.update', ['id' => $student->id])}}" method="POST" enctype="multipart/form-data">
+                                @csrf
+============================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
