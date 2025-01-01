@@ -1,0 +1,165 @@
+1.1.2025
+==============
+9:18 AM
+-----------
+
+E-Commerce Website Project Start
+=======================================
+
+2 types ecommerce site:
+
+1. Single Vendor 
+2. Multi Vendor
+
+Single Vendor
+==============
+
+
+patponno.com.bd
+
+sails limited.com
+=================
+
+User Role
+--------------
+visitor
+customer
+admin
+
+Single Vendor
+===============
+
+Website---------------
+============
+
+Home Page,
+Product Category Page,
+Product Detail Page, 
+Shopping Cart Page, 
+Checkout Page, 
+Login/sign Up Page
+
+Customer Pannel---
+==================
+
+Secure login system,
+Customer Dashboard, 
+Customer All order,		 
+Customer Profile, 
+Change Password, 
+Individual Order Status
+
+
+admin Panel-- 
+===============
+
+Secure login system,
+Category Module,
+Sub Category Module,
+Brand Module,		 
+Unit Module,
+Product Module,
+Order Module, 
+Customer Module, 
+User Module
+
+
+10:17 AM
+-----------
+
+E-Commerce site template download
+-----------
+
+Shopwise
+bigboost
+
+Httrack
+
+https://notepad.pw/nyidweb
+
+https://htmldemo.net/pallas/pallas/index.html
+==================================================================
+
+11:06 AM
+---------
+
+create laravel ecommerce project
+----------
+
+composer create-project laravel/laravel niyd-ecom
+----------------------------
+
+11:50 AM
+-------------
+
+observe template index.html
+--------------------
+
+website controller create
+------------
+
+php artisan make:controller WebsiteController
+==============================================================================================
+
+ domain এর নামে প্রথম কন্ট্রোলার
+
+==============================================
+
+
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class WebsiteController extends Controller
+{
+    public function index()
+    {
+        return view('website.home.index');
+    }
+}
+
+-----------------------------------------------------
+
+ create view website->home->index.blade
+website-> master.blade
+
+template code-> master.blade  , mastering,  
+-----------------------------------------
+
+Route create
+------------ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
