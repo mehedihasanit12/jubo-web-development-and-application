@@ -1,0 +1,145 @@
+06.01.2025
+------------
+9:21 AM
+================
+cementb2b.com
+
+notepad.pw/nyidweb
+
+Laravel package------------- class, config, route, view file
+====================
+
+Laravel Jetstream--------- 
+Laravel Breaz
+
+-----------------------------------------
+https://jetstream.laravel.com/introduction.html
+
+composer require laravel/jetstream
+
+9:57 AM
+===========
+
+php artisan jetstream:install livewire
+
+http://localhost/niyd-ecom/public/login
+
+http://localhost/niyd-ecom/public/register
+
+===========================================================
+
+Database create niyd_ecom And Connect to laravel project
+
+---------------------------------------------------------
+
+10:21 AM
+=========
+
+change-- migration file, route- api.php, web.php, node_modules library root- javascript-package, public - build, storage
+         build- assets, css,js. views-- api, components, auth , view file.
+
+php artisan migrate
+
+------------------
+
+11:22 AM
+==========
+
+jetstreem file routes থাকে vendor-- laravel-- fortify-- routes.
+
+
+src -- fortify.php--- static::loginView($prefix.'login');
+auth-login.blade.php
+
+==============================================================================
+
+AdminLte Website for admin template
+
+
+materio-bootstrap-html-admin-template-free
+Public
+https://github.com/themeselection/materio-bootstrap-html-admin-template-free
+
+views-- admin-- directory - master
+
+mastering dashboard file , login file
+
+
+
+
+
+========================================
+
+category controller
+-------------------
+
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class CategoryController extends Controller
+{
+    public function index()
+    {
+        return view('admin.category.index');
+    }
+
+    public function create()
+    {
+        return view('admin.category.create');
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
