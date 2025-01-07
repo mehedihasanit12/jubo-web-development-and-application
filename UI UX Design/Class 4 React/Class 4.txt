@@ -1,0 +1,52 @@
+npx create-react-app myapp
+
+npm start
+
+npmjs.com
+
+https://reactrouter.com/
+
+https://www.npmjs.com/package/web-vitals
+
+npm i @types/react-router
+
+npm i @types/react-router-dom
+
+ npm i react-router
+=============================================================
+mui
+---
+
+npm install @mui/material @emotion/react @emotion/styled
+
+-----------
+
+https://www.figma.com/design/ZFIUY4AMmvHWAYPOqgzLhP/Youth-devs?node-id=0-1&p=f&t=cmgbKyzeGap5kYR3-0
+
+-------------------------
+
+https://mui.com/components/?srsltid=AfmBOoqo7xoVXG5oA0Z9ec65Yu_XG6KTmBTKjswwQtBz_8R7oFBcm1pO
+
+
+https://guillaumegouessan.com/about
+
+https://threejs.org/
+
+https://www.crazygames.com/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
