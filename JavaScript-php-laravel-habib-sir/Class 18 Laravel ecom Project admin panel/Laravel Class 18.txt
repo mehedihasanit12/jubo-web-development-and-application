@@ -1,0 +1,148 @@
+13.01.2025
+==============
+9:10 AM
+--------
+
+
+
+ <div class="row mb-4">
+                            <label class="col-sm-2 col-form-label" >Category Name</label>
+                            <div class="col-sm-10">
+                                <select class="form-control" name="category_id" >
+                                    <option value="">-- select category --</option>
+                                    @foreach($categories as $category)
+                                    <option value="{{$category->id}}">{{$category->name}}</option>
+                                    @endforeach   
+                                </select>
+                            </div>
+                        </div>
+
+
+subcategory model migration , view file create.
+==========================================================
+
+self::$subCategory->category_id = $request->category_id; ===============> maping করা।
+
+-----------------------------------------------------------------------
+
+category-------- sub-category ===== relation ------- one to many
+
+sub-category------------ category ==== relation ----- one to one
+
+=======================================================================
+Elequent ORM 
+------
+Has ONe 
+Belongs to
+-------------------------
+
+sub-category Model
+=================
+
+public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+------------------------------------------------
+
+11:50 AM---------- relation 
+
+======================================================
+
+@foreach($sub_categories as $sub_category)
+                            <tr>
+                                <td>{{$loop->iteration}}</td>
+                                <td>{{$sub_category->category->name}}</td>
+                                <td>{{$sub_category->name}}</td>
+                                <td>{{$sub_category->description}}</td>
+
+
+$sub_category-------- Sub Category Model object. 
+
+
+$sub_category->category->name---- method chaining
+
+==============================================================
+
+
+@selected($category->id == $sub_category->category_id)
+
+==================================================================
+12:47 PM
+===========
+
+2:22 PM
+===========
+
+unit module create, model, view ,controller.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
