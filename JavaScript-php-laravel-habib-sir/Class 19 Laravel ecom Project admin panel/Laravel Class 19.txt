@@ -1,0 +1,296 @@
+14.01.2025
+===========
+9:24 AM
+--------
+
+
+tinyMce
+ckeditor
+
+summernote------ editor 
+
+product module- ---- crud
+
+Multipale Image
+====================
+<input type="file" multiple name="other_image[]" class="form-control" />
+
+multiple name="other_image[]"
+--------------------------------------
+
+
+Product migration
+=============
+public function up(): void
+    {
+        Schema::create('products', function (Blueprint $table) {
+            $table->id();
+            $table->integer('category_id');
+            $table->integer('sub_category_id');
+            $table->integer('brand_id');
+            $table->integer('unit_id');
+            $table->string('name');
+            $table->string('code')->unique();
+            $table->float('regular_price');
+            $table->float('selling_price');
+            $table->integer('stock')->default(0);
+            $table->tinyInteger('status')->default(1);
+            $table->text('short_description')->nullable();
+            $table->longText('long_description')->nullable();
+            $table->text('meta_title')->nullable();
+            $table->text('meta_description')->nullable();
+            $table->text('image');
+            $table->timestamps();
+        });
+    }
+
+
+
+
+
+otherImage migration create
+=============================
+public function up(): void
+    {
+        Schema::create('other_images', function (Blueprint $table) {
+            $table->id();
+            $table->integer('product_id');
+            $table->text('image');
+            $table->timestamps();
+        });
+    }
+
+
+
+
+
+Product Model
+================
+
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Product extends Model
+{
+    public static $product, $image, $imageName, $imageUrl, $directory;
+
+    public static function getImageUrl($request)
+    {
+        self::$image = $request->file('image');
+        self::$imageName = self::$image->getClientOriginalName();
+        self::$directory = 'upload/product-images/';
+        self::$image->move(self::$directory, self::$imageName);
+        self::$imageUrl = self::$directory.self::$imageName;
+        return self::$imageUrl;
+    }
+
+    public static function newProduct($request)
+    {
+        self::$product = new Product();
+        self::$product->category_id = $request->category_id;
+        self::$product->sub_category_id = $request->sub_category_id;
+        self::$product->brand_id = $request->brand_id;
+        self::$product->unit_id = $request->unit_id;
+        self::$product->name = $request->name;
+        self::$product->code = $request->code;
+        self::$product->regular_price = $request->regular_price;
+        self::$product->selling_price = $request->selling_price;
+        self::$product->stock = $request->stock;
+        self::$product->status = $request->status;
+        self::$product->short_description = $request->short_description;
+        self::$product->long_description = $request->long_description;
+        self::$product->meta_title = $request->meta_title;
+        self::$product->meta_description = $request->meta_description;
+        self::$product->image = self::getImageUrl($request);
+
+        self::$product->save();
+
+        return self::$product->id;
+    }
+
+    public static function updateProduct($request, $id)
+    {
+        self::$product = Product::find($id);
+
+        if ($request->file('image'))
+        {
+            self::$imageUrl = self::getImageUrl($request);
+        }
+        else
+        {
+            self::$imageUrl = self::$product->image;
+        }
+
+        self::$product->category_id = $request->category_id;
+        self::$product->sub_category_id = $request->sub_category_id;
+        self::$product->brand_id = $request->brand_id;
+        self::$product->unit_id = $request->unit_id;
+        self::$product->name = $request->name;
+        self::$product->code = $request->code;
+        self::$product->regular_price = $request->regular_price;
+        self::$product->selling_price = $request->selling_price;
+        self::$product->stock = $request->stock;
+        self::$product->status = $request->status;
+        self::$product->short_description = $request->short_description;
+        self::$product->long_description = $request->long_description;
+        self::$product->meta_title = $request->meta_title;
+        self::$product->meta_description = $request->meta_description;
+        self::$product->image = self::$imageUrl;
+
+        self::$product->save();
+    }
+
+    public static function deleteProduct($id)
+    {
+        self::$product = Product::find($id);
+
+        if (self::$product->image)
+        {
+            unlink(self::$product->image);
+        }
+        self::$product->delete();
+    }
+}
+
+
+Other Image Model
+=====================
+
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class OtherImage extends Model
+{
+    public static $otherImage, $image, $imageName, $imageUrl, $directory;
+
+    public static function getImageUrl($image)
+    {
+        self::$image = $image;
+        self::$imageName = self::$image->getClientOriginalName();
+        self::$directory = 'upload/product-other-images/';
+        self::$image->move(self::$directory, self::$imageName);
+        self::$imageUrl = self::$directory.self::$imageName;
+        return self::$imageUrl;
+    }
+
+    public static function newOtherImage($id, $images)
+    {
+        foreach ($images as $image)
+        {
+            self::$otherImage = new OtherImage();
+            self::$otherImage->product_id = $id;
+            self::$image = self::getImageUrl($image);
+            self::$otherImage->save();
+        }
+    }
+}
+
+
+Product Controller
+=======================
+
+
+public function store(Request $request)
+    {
+        $id = Product::newProduct($request);
+        OtherImage::newOtherImage($id, $request->file('other_image'));
+        return back()->with('message', 'Product info save successfully');
+    }
+
+=======================================================================================================
+
+Javascript
+===========
+
+onchange="getSubCategoryByCategory(this.value)
+
+1.row js- ecma5
+2.js libr- jquery
+3. js framework- React, NodeJS ExpressJS, MongoDB;
+
+4. JS Process - ajax - ActiveXObject , XMLHttpRequest 
+
+=====================================================================================
+
+function getSubCategoryByCategory($categoryId) {
+        $.ajax({
+            type: "GET",
+            url: "{{route('get-sub-category-by-category')}}",
+            data: {'id' : $categoryId},
+            DataType: 'JSON',
+            success: function (response) {
+                console.log(response);
+                var option = '';
+                option += '<option value="">--Select Product Sub Category--</option>';
+                $.each(response, function (key, value) {
+                    option += '<option value=" '+value.id+' "> '+value.name+' </option>';
+                });
+                $('#subCategory').empty();
+                $('#subCategory').append(option);
+            }
+        });
+
+    }
+
+
+public function getSubCategoryByCategory()
+    {
+        $categoryId = $_GET['id'];
+
+        $subCategories = SubCategory::where('category_id', $categoryId)->get();
+        return response()->json($subCategories);
+
+        //return response()->json($categoryId);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
