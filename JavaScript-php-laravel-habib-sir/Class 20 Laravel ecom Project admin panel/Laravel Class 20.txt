@@ -1,0 +1,78 @@
+15.01.2025
+============
+9:00 AM
+
+
+--------------------------------
+
+Product detail view create, index table create
+
+product table
+=============
+
+$table->integer('hit_count')->default(0);
+            $table->integer('sales_count')->default(0);
+            $table->tinyInteger('feature_status')->default(0);
+
+add rollback
+=====================================================================
+
+Product Model
+=============
+one to one relationship
+
+ public function category()
+    {
+        return $this->belongsTo(SubCategory::class);
+    }
+
+    public function brand()
+    {
+        return $this->belongsTo(Brand::class);
+    }
+
+    public function unit()
+    {
+        return $this->belongsTo(Unit::class);
+    }
+
+	public function otherImage()
+    {
+        return $this->hasMany(OtherImage::class);
+    }
+===========================================================================
+
+
+{!! $product->long_description !!}----------- html code read 
+
+{{$product->long_description}}--------------- html code not read  
+
+
+
+=============================================================================
+
+frontend view
+==================
+
+$categories = Category::all();
+
+        foreach ($categories as $category)
+        {
+            $category->products;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
