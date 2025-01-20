@@ -1,0 +1,99 @@
+20.01.2025
+============
+
+
+return Product::latest()->get();
+
+Product::orderBy('id' ,'desc')->get();
+-----------------------------------------------
+
+return Product::latest()->take(2)->get();
+
+return Product::latest()->skip(2)->first();
+
+------------------------------------------------------
+
+return Product::latest()->skip(3)->take(2)->get();
+
+=====================================================================
+
+public function index()
+    {
+        return view('website.home.index', [
+            'categories' => Category::all(),
+            'new_products' => Product::latest()->get(),
+            'first_new_products' => Product::latest()->take(2)->get(),
+            'second_new_product' => Product::latest()->skip(2)->first(),
+            'third_new_products' => Product::latest()->skip(3)->take(2)->get(),
+        ]);
+    }
+
+================================================================================
+
+existing table column add
+=============================
+php artisan make:migration add_home_status_column_to_categories_table --table=categ
+ories
+-------------------
+
+public function up(): void
+    {
+        Schema::table('categories', function (Blueprint $table) {
+            $table->tinyInteger('home_status')->default(0);
+        });
+    }
+
+php artisan migrate
+============================================================================================
+
+'home_category_one'  => Category::where('home_status', 1)->orderBy('id', 'asc')->first(),
+'home_category_two'  => Category::where('home_status', 1)->orderBy('id', 'asc')->skip(1)->first()
+
+
+
+
+
+
+12:17 PM	Low Memory
+					The IDE is running low on memory and this might affect performance. Please consider increasing available heap.
+					Analyze Memory Use   Configure
+
+
+
+========================================================================================
+Laravel Packeage
+==============
+
+shopping cart for laravel 11
+
+https://packagist.org/
+
+composer require hardevine/shoppingcart
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
