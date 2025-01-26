@@ -1,0 +1,195 @@
+22.01.2025
+=============
+
+9:26 AM
+==========
+
+ADD TO CART
+===============
+Route::post('/cart/add', [CartController::class, 'addToCart'])->name('cart.add');
+
+CartController
+---------------
+
+use Cart;
+
+ public function addToCart(Request $request, $id)
+    {
+        $this->product = Product::find($id);
+        Cart::add([
+            'id' => $this->product,
+            'name' => $this->product->name,
+            'qty' => $request->qty,
+            'price' => $this->product->selling_price,
+            'options' => [
+                'image' => $this->product->image,
+                'code' => $this->product->code
+            ]
+        ]);
+        return $request;
+    }
+
+================================
+
+sob packecage vendor folder;
+
+====================================
+
+https://softtech-it.com/
+
+
+ @csrf
+   <label>Quantity</label>
+  <input value="{{$cart_product->rowId}}" name="qty[{{$key}}][rowId]" type="hidden">
+  <input min="1" max="100" value="{{$cart_product->qty}}" name="qty[{{$key}}][qty]" type="number">
+
+
+=============================================================================================================================
+cartController
+================
+
+
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Product;
+use Cart;
+use Illuminate\Http\Request;
+
+class CartController extends Controller
+{
+    private $product;
+
+    public function index()
+    {
+        return view('website.cart.index', ['cart_products' => Cart::content()]);
+    }
+
+    public function addToCart(Request $request, $id)
+    {
+        $this->product = Product::find($id);
+        Cart::add([
+            'id' => $this->product->id,
+            'name' => $this->product->name,
+            'qty' => $request->qty,
+            'price' => $this->product->selling_price,
+            'options' => [
+                'image' => $this->product->image,
+                'code' => $this->product->code
+            ]
+        ]);
+
+        return redirect('cart/index');
+    }
+
+    public function deleteProduct($rowId)
+    {
+        Cart::remove($rowId);
+        return back()->with('cart-delete-message', 'Cart product info delete successfully.');
+    }
+
+    public function updateProduct(Request $request)
+    {
+        foreach ($request->qty as $item)
+        {
+            Cart::update($item['rowId'], $item['qty']);
+        }
+        return back()->with('message', 'Cart product info update successfully.');
+    }
+}
+==========================================================================================================
+
+<tbody>
+                                    @php($sum=0)
+                                    @foreach($cart_products as $key => $cart_product)
+                                    <tr>
+                                        <td class="product_remove"><a href="{{route('cart.remove', ['id' => $cart_product->rowId])}}" onclick="return confirm('Are you sure ..');"><i class="fa fa-trash-o"></i></a></td>
+                                        <td class="product_thumb"><a href="#"><img src="{{asset($cart_product->options->image)}}" width="50" height="50" alt=""></a></td>
+                                        <td class="product_name"><a href="{{route('product-detail', ['id' => $cart_product->id])}}">{{$cart_product->name}}</a></td>
+                                        <td class="product-price">BDT {{$cart_product->price}}</td>
+                                        <td class="product_quantity">
+                                                @csrf
+                                                <label>Quantity</label>
+                                                <input value="{{$cart_product->rowId}}" name="qty[{{$key}}][rowId]" type="hidden">
+                                                <input min="1" max="100" value="{{$cart_product->qty}}" name="qty[{{$key}}][qty]" type="number">
+                                        </td>
+                                        <td class="product_total">BDT {{$cart_product->price * $cart_product->qty}}</td>
+                                    </tr>
+                                     @php($sum = $sum + ($cart_product->price * $cart_product->qty))
+                                    @endforeach
+
+                                    </tbody>
+
+====================================================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
