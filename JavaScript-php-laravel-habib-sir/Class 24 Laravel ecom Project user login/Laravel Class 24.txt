@@ -1,0 +1,277 @@
+27.01.2025
+============
+
+9:28 AM
+-----------
+
+Order 
+=====================
+Customer login
+-------------------------
+checkout page edit
+----------------
+
+customer model, migration create
+===================================
+migration
+----------
+
+$table->string('name');
+            $table->string('email');
+            $table->string('mobile');
+            $table->string('password');
+            $table->text('image')->nullable();
+            $table->string('blood_group')->nullable();
+            $table->string('date_of_birth')->nullable();
+            $table->string('nid')->nullable();
+            $table->text('address')->nullable();
+============================================
+
+model
+=======
+
+public static function newCustomer($request)
+    {
+        self::$customer = new Customer();
+        
+        self::$customer->name = $request->name;
+        self::$customer->email = $request->email;
+        self::$customer->mobile = $request->mobile;
+        self::$customer->password = bcrypt($request->password);
+	  self::$customer->save();
+    }
+
+checkout controller
+======================
+
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Customer;
+use Illuminate\Http\Request;
+
+class CheckoutController extends Controller
+{
+    public function index()
+    {
+        return view('website.checkout.index');
+    }
+
+    public function newCustomer(Request $request)
+    {
+        Customer::newCustomer($request);
+        return redirect('/checkout/billing-info');
+    }
+    
+    public function billingInfo()
+    {
+        return view('website.checkout.billing-info');
+    }
+}
+
+=============================================================================
+
+create view website>checkout>billing-info
+====================================================
+
+route
+-------
+Route::post('/checkout/new-customer', [CheckoutController::class, 'newCustomer'])->name('checkout.new-customer');
+Route::get('/checkout/billing-info', [CheckoutController::class, 'billingInfo'])->name('checkout.billing-info');
+Route::get('/customer/login-register', [CustomerAuthController::class, 'index'])->name('login-register');
+Route::post('/checkout/customer-login', [CheckoutController::class, 'customerLogin'])->name('checkout.customer-login');
+===============================================================================================================================
+
+
+
+checkout controller
+=====================
+    
+    private $customer;
+    public function customerLogin(Request $request)
+    {
+        $this->customer = Customer::where('email', $request->email)->first();
+        if ($this->customer)
+        {
+            if (password_verify($request->password, $this->customer->password))
+            {
+                return redirect('/checkout/billing-info');
+            }
+            else
+            {
+                return back()->with('message', 'Password is invalid.');
+            }
+        }
+
+        else
+        {
+            return back()->with('message', 'Email address is invalid.');
+        }
+    }
+
+==================================================================================================
+
+
+after launch
+-----------------
+2:33 PM
+============
+
+
+browser memory- primary- work when browser open- session
+                secondary- allways- cookies 
+
+
+=======================================================
+row-php project
+----------------
+
+session access----------  session_start();
+data store in session---
+data retrive
+data remove
+-------------------------------------------------------------------
+<?php
+         session_start();
+       echo $_SESSION['name'];
+    ?>
+
+unset($_SESSION['name'])
+
+=================================================================================
+in laravel
+----------
+
+Session::put('id', $this->customer->id);
+Session::put('name', $this->customer->name);
+
+=========================================================================================
+
+master.blade
+--------------
+
+<li class="top_links">
+                                @if(Session::get('id'))
+                                    <a href="#"><i class="zmdi zmdi-account"></i> {{Session::get('name')}} <i class="zmdi zmdi-caret-down"></i></a>
+                                    <ul class="dropdown_links">
+                                        <li><a href="{{route('login-register')}}">My Dashboard </a></li>
+                                        <li><a href="{{route('customer.logout')}}">Logout</a></li>
+                                    </ul>
+                                @else
+                                    <a href="#"><i class="zmdi zmdi-account"></i> My account <i class="zmdi zmdi-caret-down"></i></a>
+                                    <ul class="dropdown_links">
+                                        <li><a href="{{route('login-register')}}"> Sign Up / Login </a></li>
+                                        <li><a href="">Shopping Cart</a></li>
+                                        <li><a href="">Wishlist</a></li>
+                                    </ul>
+                                @endif
+                            </li>
+
+=================================================================================================================
+
+
+customer auth controller
+---------------------------
+use Session;
+public function logout()
+    {
+        Session::forget('id');
+        Session::forget('name');
+        
+        return redirect('/');
+    }
+
+========================================================================================================
+
+Model, migration file Order, Orderdetail
+
+====================================================
+
+Order migration
+---------------------
+
+public function up(): void
+    {
+        Schema::create('orders', function (Blueprint $table) {
+            $table->id();
+            $table->integer('customer_id');
+            $table->integer('courier_id')->default(0);
+            $table->integer('order_total');
+            $table->integer('tax_total');
+            $table->integer('shipping_total');
+            $table->text('order_date');
+            $table->text('order_timestamp');
+            $table->string('order_status')->default('Pending');
+            $table->text('delivery_address');
+            $table->text('delivery_date');
+            $table->text('delivery_timestamp');
+            $table->string('delivery_status')->default('Pending');
+            $table->integer('payment_amount')->default(0);
+            $table->text('payment_date');
+            $table->text('payment_timestamp');
+            $table->string('payment_status')->default('Pending');
+            $table->text('currency')->default('BDT');
+            $table->text('transaction_id')->nullable();
+            $table->timestamps();
+        });
+==============================================================
+order detail migration
+--------------------------
+
+
+public function up(): void
+    {
+        Schema::create('order_details', function (Blueprint $table) {
+            $table->id();
+            $table->integer('order_id');
+            $table->integer('product_id');
+            $table->string('product_name');
+            $table->integer('product_price');
+            $table->integer('product_qty');
+            $table->timestamps();
+        });
+
+
+=======================================================================================
+
+php artisan migrate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
