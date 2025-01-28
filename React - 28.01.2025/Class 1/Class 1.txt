@@ -1,0 +1,188 @@
+28.01.2025
+==============
+9:50 AM
+----------
+
+https://asif.com.bd/
+
+Json, api
+--------------
+json
+-----
+
+const myInfo = {
+    myName : "Asif",
+    myWeb : "asif.com.bd",
+    myGender : "Male",
+    isAlive : true,
+    weight : 65,
+    address : [
+        'Dhaka',
+        'Bangladesh'
+    ],
+    phone : {
+        mobile : '01743534534',
+        home: '0342543454'
+    },
+    myJob : function(){
+        return 'Web Developer';
+    }
+}
+
+console.log(myInfo.myJob());
+
+
+array of json
+==============
+
+https://jsonplaceholder.typicode.com/
+
+
+const myStudents = [
+    {
+        id: 1,
+        name: "John",
+        age: 20
+    },
+    {
+        id: 2,
+        name: "John",
+        age: 20
+    },
+    {
+        id: 3,
+        name: "John",
+        age: 20
+    }
+];
+
+// stringify the array of json
+
+console.log(JSON.stringify(myStudents))
+
+======================================================
+console.log(JSON.parse(myStudents));
+
+==========================================================
+
+
+React
+=====================================================
+
+
+readymadeui.com
+https://tailblocks.cc/
+
+=================================
+React component
+-------------------
+
+const SiamComponent = (props) => {
+    return (
+        <div>
+            {props.data} is not a bad boy.
+        </div>
+    );
+};
+
+export default SiamComponent;
+
+==================================================
+
+<SiamComponent data="Siam" />
+=====================================
+
+const { data, carecter } = props; const studentInfo = {name: "siam", age: 25}  const { name, age} = studentInfo;
+
+structuring
+
+const SiamComponent = ({data, carecter}) => {
+    
+    return (
+        <div>
+            {data} is not a {carecter} boy.
+        </div>
+    );
+};
+
+========================================================
+React Hooks
+===============
+
+
+return (
+      <div>
+        <button className="border rounded shadow px-3 py-3 text-3xl hover:cursor-pointer hover:bg-blue-400" onClick={() => setVal(val++)}>+</button>
+        <span className="px-3 text-3xl">{val}</span>
+        <button className="border rounded shadow px-3 py-3 text-3xl hover:cursor-pointer hover:bg-blue-400" onClick={() => setVal(val--)}> - </button>
+      </div>
+    );
+};
+
+import { useState } from "react";
+
+
+const ChangeValue = () => {
+    let [val, setVal] = useState(0);
+    const increment = () => {
+        setVal(val++);
+    }
+
+    const decrement = () => {
+      setVal(val--);
+    };
+    return (
+      <div>
+        <button className="border rounded shadow px-3 py-3 text-3xl hover:cursor-pointer hover:bg-blue-400" onClick={increment}>+</button>
+        <span className="px-3 text-3xl">{val}</span>
+        <button className="border rounded shadow px-3 py-3 text-3xl hover:cursor-pointer hover:bg-blue-400" onClick={decrement}> - </button>
+      </div>
+    );
+};
+
+export default ChangeValue;
+
+=====================================================================
+
+
+useEffect
+=============
+
+react router
+==============
+npm i react-router
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
