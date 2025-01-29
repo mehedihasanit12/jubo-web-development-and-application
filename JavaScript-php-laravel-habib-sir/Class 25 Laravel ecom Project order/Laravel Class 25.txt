@@ -1,0 +1,174 @@
+29.01.2025
+=============
+9:20 AM
+---------
+
+route for new-order
+-------------------------
+
+<?php
+        Session::put('order_total', $orderTotal);
+          Session::put('tax_total', $tax);
+        Session::put('shipping_total', $shipping);
+ ?>
+
+
+order model
+==============
+
+public static function newOrder($request)
+    {
+        self::$order = new Order();
+        self::$order->customer_id = Session::get('id');
+        self::$order->order_total = Session::get('order_total');
+        self::$order->tax_total = Session::get('tax_total');
+        self::$order->shipping_total = Session::get('shipping_total');
+        self::$order->order_date = date('Y-m-d');
+        self::$order->order_timestamp = strtotime(date('Y-m-d'));
+        self::$order->delivery_address = $request->delivery_address;
+        self::$order->payment_method = $request->payment_method;
+        
+        self::$order->save();
+        return self::$order;
+    }
+
+
+=======================================================================================================
+
+
+order detail model
+=======================
+
+public static $orderDetail;
+
+    public static function newOrderDetail($orderId)
+    {
+        foreach (Cart::content() as $item)
+        {
+            self::$orderDetail = new OrderDetail();
+            self::$orderDetail->order_id = $orderId;
+            self::$orderDetail->product_id = $item->id;
+            self::$orderDetail->product_name = $item->name;
+            self::$orderDetail->product_price = $item->price;
+            self::$orderDetail->product_qty = $item->qty;
+            self::$orderDetail->save();
+
+        }
+    }
+
+============================================================================================================
+
+
+11:02 AM
+=========
+
+
+break
+===================================================
+
+order
+==========
+checkoutController
+========================
+
+public function newOrder(Request $request)
+    {
+        $this->orderId = Order::newOrder($request);
+        OrderDetail::newOrderDetail($this->orderId);
+        return redirect('/checkout/complete-order')->with('message', 'Your order info post successfully. Please wait, we will contact with you soon.');
+    }
+
+    public function completeOrder()
+    {
+        return view('website.checkout.complete-order');
+    }
+
+=============================================================================
+{{count( Cart::content() )}}
+
+==================================================================================
+providers--- appserviceprovider
+-----------------------
+
+public function boot(): void
+    {
+        View::share(['website.master'], function ($view) {
+            $view->with('categories', Category::all());
+        });
+    }
+-----------------------------------------
+use View;
+use App\Models\Category;
+
+================================================
+
+create --- php artisan make:controller AdminOrderController
+-------------------
+route, view file
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
