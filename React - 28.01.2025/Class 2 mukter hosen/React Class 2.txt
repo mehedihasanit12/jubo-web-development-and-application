@@ -1,0 +1,198 @@
+02.02.2025
+------------
+9:39 AM
+=====================
+
+https://bd.linkedin.com/in/muktar-hosen?trk=people-guest_people_search-card
+
+https://www.geeksforgeeks.org/reactjs-basics-concepts-complete-reference/?ref=shm
+
+
+react basic ধারনা
+-------------------
+
+npx create-react-app todo-frontend
+
+
+error
+---------
+https://www.youtube.com/watch?v=pQ_pip03F_k
+
+packege.json react 18
+
+npm i
+
+npm install web-vitals
+
+===============================================================================
+12:35 PM
+---------
+default, named export, import
+===================================================
+
+react file structure
+
+==========================================
+import React from 'react';
+
+const Welcome = ({name, age}) => {
+
+
+
+    return (
+      <div>
+        <p style={{color: "red"}}>Hello {name}, How are you?</p>
+        <p>Your Age is {age}</p>
+      </div>
+    );
+};
+
+export default Welcome;
+
+
+======================================================================================
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <Welcome name={"Rubel Ahmed"} age={18}/>
+    <Welcome name={"Rahat Ahmed"} age={28}/>
+  </React.StrictMode>
+);
+
+===========================================================================
+
+npm i react-router-dom
+
+
+app.jsx -- routing
+
+ctrl+ space
+
+=========================================================================================
+
+<User userName={"Rahat"} designation={"Devops Eng."} />
+        <User userName={"Rakib"} designation={"Software Eng."} />
+        <User userName={"Sohel"} designation={"IT Solution"} />
+        <User userName={"Sohel2"} designation={"IT Solution2"} />
+=========================================================================
+
+
+
+import React from 'react';
+import User from './User';
+
+const UserList = () => {
+    
+    let users = [
+      {
+        userName: "Rahat",
+        designation: "Devops Eng.",
+      },
+      {
+        userName: "Rakib",
+        designation: "Software Eng.",
+      },
+      {
+        userName: "Sohel",
+        designation: "IT Solution",
+      },
+      {
+        userName: "Akib",
+        designation: "Web developer",
+      }
+    ];
+
+
+
+    return(
+        <div>
+            {users.map((user, index)=>
+                <User userName={user.userName} designation={user.designation} />
+            )}
+        </div>
+    );
+};
+
+export default UserList;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
