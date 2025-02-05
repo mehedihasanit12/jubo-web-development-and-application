@@ -1,0 +1,121 @@
+5.02.2025
+-----------------
+10:12 AM
+==============
+
+
+invoice, invoice print
+----------------------------
+https://www.itsolutionstuff.com/tag/laravel-11.html
+https://www.itsolutionstuff.com/post/laravel-11-generate-pdf-file-using-dompdf-exampleexample.html
+
+use package---- dom pdf
+
+composer require barryvdh/laravel-dompdf
+
+======================================
+
+delete order, orderdetail
+==============================
+12:02 PM
+------------
+
+public function delete($id)
+    {
+        $this->order = Order::find($id);
+        if ($this->order->order_status != 'Cancel')
+        {
+            return back()->with('message', 'Sorry .. you can not delete this.');
+        }
+        Order::deleteOrder($id);
+        OrderDetail::deleteOrderDetail($id);
+        return back()->with('delete-message', 'Order info delete successfully.');
+    }
+
+
+=======================================================================
+
+public static function deleteOrderDetail($id)
+    {
+        self::$orderDetails = OrderDetail::where('order_id', $id)->get();
+        foreach (self::$orderDetails as $orderDetail)
+        {
+            $orderDetail->delete();
+        }
+    }
+=====================================================================================
+
+
+public static function deleteOrder($id)
+    {
+        Order::find($id)->delete();
+    }
+
+============================================================================================
+
+
+
+1. payment gateway
+2. user module -- role
+3. customer dashboard
+4. ajax search.
+==========================================================
+
+payment gateway
+-----------------------
+
+
+api ------ 
+1. regular-----data, view
+2. restful--- data , no view
+
+
+1. url
+2. class -- controller , model
+3. config 
+4. view file 
+
+3:09 PM
+----------
+
+sslecommerce setup laravel project
+
+===================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

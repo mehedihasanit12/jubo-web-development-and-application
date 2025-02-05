@@ -1,0 +1,272 @@
+4.01.2025
+-----------------
+9:33 AM
+===========
+error- exception handle
+
+404 -- route not found 
+419 -- csrf token
+500 -- function problem
+
+.env file APP_DEBUG = true/false
+
+===================================================
+
+order detail page
+-------------------------------------
+
+==============================================================================================================
+error solve
+input type problem
+----------------------------------------------------
+   <input type="text" class="form-control" value="{{$order->customer->name.'('.$order->customer->mobile.')'}}" readonly/>
+<input type="number" class="form-control" value="{{$order->customer->name.'('.$order->customer->mobile.')'}}" readonly>
+
+"{{$order->customer->name.'('.$order->customer->mobile.')'}}"
+
+=========================================================================================================
+
+
+order detail
+===============
+
+@extends('admin.master')
+
+@section('body')
+
+    <div class="row">
+        <div class="col">
+            <p class="text-center text-success">{{session('message')}}</p>
+            <p class="text-center text-danger">{{session('delete-message')}}</p>
+            <div class="card card-body">
+                <form action="" method="POST">
+                    @csrf
+                    <div class="row mb-4">
+                        <label for="" class="col-md-3">Order Total</label>
+                        <div class="col-md-9">
+                            <input type="number" class="form-control" value="{{$order->order_total}}" readonly>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <label for="" class="col-md-3">Customer Info</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" value="{{$order->customer->name.'('.$order->customer->mobile.')'}}" readonly>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <label for="" class="col-md-3">Delivery Address</label>
+                        <div class="col-md-9">
+                            <textarea class="form-control">{{$order->delivery_address}}</textarea>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <label class="col-md-3">Order Status</label>
+                        <div class="col-md-9">
+                            <select class="form-control" name="order_status">
+                                <option value=""> -- Select Order Status -- </option>
+                                <option value="Pending" {{$order->order_status == 'Pending' ? 'selected' : ''}}> Pending </option>
+                                <option value="Processing" {{$order->order_status == 'Processing' ? 'selected' : ''}}> Processing </option>
+                                <option value="Complete" {{$order->order_status == 'Complete' ? 'selected' : ''}}> Complete </option>
+                                <option value="Cancel" {{$order->order_status == 'Cancel' ? 'selected' : ''}}> Cancel </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <label class="col-md-3">Courier Info</label>
+                        <div class="col-md-9">
+                            <select class="form-control" name="courier_id">
+                                <option value=""> -- Select Courier Info -- </option>
+                                <option value="1" {{$order->courier_id == 1 ? 'selected' : ''}}> SA Probibahan </option>
+                                <option value="2" {{$order->courier_id == 2 ? 'selected' : ''}}> Korotoa </option>
+                                <option value="3" {{$order->courier_id == 3 ? 'selected' : ''}}> Subdorban </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <label class="col-md-3"></label>
+                        <div class="col-md-9">
+                            <button type="submit" class="btn btn-primary">Update Order Status</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+@endsection
+
+=======================================================================================================================
+
+
+order edit
+===========
+
+@extends('admin.master')
+
+@section('body')
+
+    <div class="row">
+        <div class="col">
+            <p class="text-center text-success">{{session('message')}}</p>
+            <p class="text-center text-danger">{{session('delete-message')}}</p>
+            <div class="card card-body">
+                <form action="{{route('admin.order-update', ['id' => $order->id])}}" method="POST">
+                    @csrf
+                    <div class="row mb-4">
+                        <label for="" class="col-md-3">Order Total</label>
+                        <div class="col-md-9">
+                            <input type="number" class="form-control" value="{{$order->order_total}}" readonly>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <label for="" class="col-md-3">Customer Info</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" value="{{$order->customer->name.'('.$order->customer->mobile.')'}}" readonly>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <label for="" class="col-md-3">Delivery Address</label>
+                        <div class="col-md-9">
+                            <textarea class="form-control" name="delivery_address">{{$order->delivery_address}}</textarea>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <label class="col-md-3">Order Status</label>
+                        <div class="col-md-9">
+                            <select class="form-control" name="order_status">
+                                <option value=""> -- Select Order Status -- </option>
+                                <option value="Pending" {{$order->order_status == 'Pending' ? 'selected' : ''}}> Pending </option>
+                                <option value="Processing" {{$order->order_status == 'Processing' ? 'selected' : ''}}> Processing </option>
+                                <option value="Complete" {{$order->order_status == 'Complete' ? 'selected' : ''}}> Complete </option>
+                                <option value="Cancel" {{$order->order_status == 'Cancel' ? 'selected' : ''}}> Cancel </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <label class="col-md-3">Courier Info</label>
+                        <div class="col-md-9">
+                            <select class="form-control" name="courier_id">
+                                <option value=""> -- Select Courier Info -- </option>
+                                <option value="1" {{$order->courier_id == 1 ? 'selected' : ''}}> SA Probibahan </option>
+                                <option value="2" {{$order->courier_id == 2 ? 'selected' : ''}}> Korotoa </option>
+                                <option value="3" {{$order->courier_id == 3 ? 'selected' : ''}}> Subdorban </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <label class="col-md-3"></label>
+                        <div class="col-md-9">
+                            <button type="submit" class="btn btn-primary">Update Order Status</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+@endsection
+
+================================================================================================
+order update
+======================
+
+private $order;
+    public function update(Request $request, $id)
+    {
+        $this->order = Order::find($id);
+        if ($request->order_status == 'Pending')
+        {
+            $this->order->order_status = $request->order_status;
+            $this->order->delivery_status = $request->order_status;
+            $this->order->payment_status = $request->order_status;
+        }
+        elseif ($request->order_status == 'Proccessing')
+        {
+            $this->order->courier_id = $request->courier_id;
+            $this->order->order_status = $request->order_status;
+            $this->order->delivery_status = $request->order_status;
+            $this->order->delivery_address = $request->delivery_address;
+            $this->order->payment_status = $request->order_status;
+        }
+        elseif ($request->order_status == 'Complete')
+        {
+            $this->order->order_status = $request->order_status;
+            $this->order->delivery_status = $request->order_status;
+            $this->order->payment_status = $request->order_status;
+            $this->order->delivery_date = date('Y-m-d');
+            $this->order->delivery_timestamp = strtotime(date('Y-m-d'));
+            $this->order->payment_amount = $this->order->order_total;
+            $this->order->payment_date = date('Y-m-d');
+            $this->order->payment_timestamp = strtotime(date('Y-m-d'));
+        }
+        elseif ($request->order_status == 'Cancel')
+        {
+            $this->order->order_status = $request->order_status;
+            $this->order->delivery_status = $request->order_status;
+            $this->order->payment_status = $request->order_status;
+        }
+        $this->order->save();
+	  return redirect('/admin/all-order')->with('message', 'Order status info update successfully.');
+    }
+
+======================================================================================================================
+
+3:11 PM
+============
+
+order invoice
+================================
+https://github.com/sparksuite/simple-html-invoice-template
+https://sparksuite.github.io/simple-html-invoice-template/
+
+
+3:48 PM
+==========
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
