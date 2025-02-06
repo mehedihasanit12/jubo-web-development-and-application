@@ -1,0 +1,96 @@
+6.02.2025
+=============
+
+9:51 AM
+---------
+
+sslcommerzPaymentController
+---------------------------------
+
+11:23 AM
+------------
+
+#Before  going to initiate the payment order status need to update as Pending.
+        $update_product = DB::table('orders')
+            ->where('transaction_id', $post_data['tran_id'])
+            ->updateOrInsert([
+                'customer_id'       => 123,
+                'order_total'       => 500,
+                'tax_total'         => 4353,
+                'order_date'        => date('Y-m-d'),
+                'order_timestamp'   => strtotime(date('Y-m-d')),
+                'shipping_total'    => 435,
+                'delivery_address'  => $post_data['cus_add1'],
+                'payment_method'    => 'Online',
+                'transaction_id'    => $post_data['tran_id'],
+                'currency'          => $post_data['currency']
+            ]);
+OrderDetail::newOrderDetail(Order::latest()->first()->id); false
+OrderDetail::newOrderDetail(Order::orderBy('id', 'desc')->first()->id); true
+
+===========================================================================================================
+ public function index($request)
+    {
+        # Here you have to receive all the order data to initate the payment.
+        # Let's say, your oder transaction informations are saving in a table called "orders"
+        # In "orders" table, order unique identity is "transaction_id". "status" field contain status of the transaction, "amount" is the order amount to be paid and "currency" is for storing Site Currency which will be checked with paid currency.
+
+        $post_data = array();
+        $post_data['total_amount'] = Session::get('order_total'); # You cant not pay less than 10
+        $post_data['currency'] = "BDT";
+        $post_data['tran_id'] = uniqid(); // tran_id must be unique
+
+        # CUSTOMER INFORMATION
+        $post_data['cus_name'] = Session::get('name');;
+        $post_data['cus_email'] = 'customer@mail.com';
+==================================================================
+
+problem
+----------
+
+BDT {{Session::get('order_total')}}
+
+
+12:07 PM
+=============
+
+
+.env file APP_URL=http://localhost/niyd-ecom/public/
+
+===========================================================
+
+12:32 PM
+=========
+2:38 PM
+===========
+
+sslcommerz clear all session after transaction complete. solution--------
+
+public function success(Request $request)
+    {
+        $customer = Customer::find($request->value_a);
+        Session::put('id', $customer->id);
+        Session::put('name', $customer->name);
+
+
+=======================================================================
+php artisan make:controller AdminCustomerController
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
