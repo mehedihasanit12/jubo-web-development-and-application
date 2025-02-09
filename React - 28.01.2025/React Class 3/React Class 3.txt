@@ -1,0 +1,455 @@
+9.02.2025
+------------------
+9:49 AM
+--------
+10:00 AM
+---------
+10:24 AM
+---------
+create todolist
+-------------------
+import React, { useState } from 'react';
+
+const TodoList = () => {
+
+    const todos = [
+      { id: 1, title: "Task-1" },
+      { id: 2, title: "Task-2" },
+      { id: 3, title: "Task-3" },
+      { id: 4, title: "Task-4" },
+      { id: 5, title: "Task-5" }
+    ];
+
+    const [todoList, setTodoList] = useState(todos);
+
+    return (
+      <div>
+        <h2>Todo List</h2>
+
+        <input type="text" /> <button>Save Todo</button>
+
+        <ul>
+          {todos.map((todo, index) => (
+            <li key={index}>{todo.title}</li>
+          ))}
+        </ul>
+      </div>
+    );
+};
+
+export default TodoList;
+===========================================================================
+app.jsx
+----------
+import React from 'react';
+import { Link, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import About from './Pages/About';
+import UserList from "./Pages/UserList";
+import TodoList from './Pages/TodoList';
+
+const App = () => {
+
+  return (
+    <Router>
+      <div style={{ display: "flex", gap: "40px" }}>
+        <Link to={"/"}> Home </Link>
+        <Link to={"/about"}> About </Link>
+        <Link to={"/users"}> Users </Link>
+      </div>
+      <Routes>
+        <Route path="/" element={<TodoList/>} />
+        <Route path="/users" element={<UserList />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </Router>
+  );
+};
+
+export default App;
+==================================================================
+
+
+import React, { useState } from 'react';
+
+const TodoList = () => {
+
+    const [newTodo, setNewTodo] = useState("");
+
+    const [todos, setTodos] = useState([
+      { id: 1, title: "Task-1" },
+      { id: 2, title: "Task-2" },
+      { id: 3, title: "Task-3" },
+      { id: 4, title: "Task-4" },
+      { id: 5, title: "Task-5" }
+    ]);
+
+    // const todos = [
+    //   { id: 1, title: "Task-1" },
+    //   { id: 2, title: "Task-2" },
+    //   { id: 3, title: "Task-3" },
+    //   { id: 4, title: "Task-4" },
+    //   { id: 5, title: "Task-5" }
+    // ];
+
+
+    const updateNewTodo = (event) => {
+        
+        setNewTodo(event.target.value)
+    
+    }
+
+    const addTodo = () => {
+        const newData = {id:6, title:newTodo};
+        todos.push(newData);
+        console.log(todos)
+    }
+
+
+    return (
+      <div>
+        <h2>Todo List</h2>
+
+        <input type="text" placeholder='Todo Title' value={newTodo} onChange={updateNewTodo}/> 
+        
+        <button onClick={addTodo}>Save Todo</button>
+
+        <ul>
+          {todos.map((todo, index) => (
+            <li key={index}>{todo.title}</li>
+          ))}
+        </ul>
+      </div>
+    );
+};
+
+export default TodoList;
+=============================================================================================
+
+
+
+setTodos([...todos, newData])
+
+
+
+npm i axios
+
+const fetchData = async() => {
+      const response = await axios.get("https://dummyjson.com/todos");
+      console.log({ response });
+    };
+
+===========================================================================
+
+const fetchData = async() => {
+      const response = await axios.get("https://dummyjson.com/todos");
+      console.log({ response });
+    };
+
+    useEffect(()=>{
+       fetchData()
+    }, [])
+
+
+====================================================================
+
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+
+const TodoDetail = () => {
+    const { id } = useParams();
+    const [todo, setTodo] = useState();
+    
+    const fetchData = async() => {
+        const response = await axios.get("https://dummyjson.com/todos/"+id);
+        console.log({response})
+        setTodo(response.data)
+    }
+
+    useEffect(()=>{
+        fetchData()
+    }, [])
+    return (
+        <div>
+            <h2>Todo Details for id: {id}</h2>
+            <p>Task: {todo?.todo}</p>
+            <p>Completed: {`${todo?.completed}`}</p>
+            <p>Completed: {todo?.userId}</p>
+        </div>
+    );
+};
+
+export default TodoDetail;
+
+====================================================================================================
+
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+
+const TodoList = () => {
+
+    const [newTodo, setNewTodo] = useState("");
+
+    const [todos, setTodos] = useState([]);
+
+    // const todos = [
+    //   { id: 1, title: "Task-1" },
+    //   { id: 2, title: "Task-2" },
+    //   { id: 3, title: "Task-3" },
+    //   { id: 4, title: "Task-4" },
+    //   { id: 5, title: "Task-5" }
+    // ];
+
+    const fetchData = async() => {
+      const response = await axios.get("https://dummyjson.com/todos");
+      setTodos(response.data.todos)
+    };
+
+    useEffect(()=>{
+       fetchData()
+    }, [])
+
+    const updateNewTodo = (event) => {
+        
+        setNewTodo(event.target.value)
+    
+    }
+
+    const addTodo = () => {
+        const newData = {id:6, title:newTodo};
+        setTodos([...todos, newData])
+    }
+
+
+    return (
+      <div>
+        <h2>Todo List</h2>
+
+        <input type="text" placeholder='Todo Title' value={newTodo} onChange={updateNewTodo}/> 
+        
+        <button onClick={addTodo}>Save Todo</button>
+
+        <ul>
+          {todos.map((todo, index) => (
+            <li key={index}>{todo.todo}</li>
+          ))}
+        </ul>
+      </div>
+    );
+};
+
+export default TodoList;
+====================================================================================================
+
+
+
+
+
+
+axios , dynamic routing, api fetch data, useeffect, usestate
+
+
+
+=========================================================================================
+
+
+import axios from "axios";
+
+export const getTodos = async() => {
+      const response = await axios.get("https://dummyjson.com/todos");
+      return response.data;
+    };
+
+
+export const getTodoById = async(id) => {
+        const response = await axios.get(`https://dummyjson.com/todos/${id}`);
+        return response.data;
+    }    
+
+=====================================================================================
+
+
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { getTodoById } from '../api/todo-api';
+
+const TodoDetail = () => {
+    const { id } = useParams();
+    const [todo, setTodo] = useState();
+    
+    
+
+    useEffect(()=>{
+        const getTodo = async() => {
+            const data = await getTodoById(id);
+            setTodo(data);
+        }
+        getTodo();
+    }, [])
+    return (
+      <div>
+        <h2>Todo Details for id: {id}</h2>
+        <p>Task: {todo?.todo}</p>
+        <p>Completed: {`${todo?.completed}`}</p>
+        <p>User ID: {todo?.userId}</p>
+      </div>
+    );
+};
+
+export default TodoDetail;
+
+=======================================================================================
+
+
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { getTodos } from '../api/todo-api';
+
+const TodoList = () => {
+
+    const [newTodo, setNewTodo] = useState("");
+
+    const [todos, setTodos] = useState([]);
+
+    // const todos = [
+    //   { id: 1, title: "Task-1" },
+    //   { id: 2, title: "Task-2" },
+    //   { id: 3, title: "Task-3" },
+    //   { id: 4, title: "Task-4" },
+    //   { id: 5, title: "Task-5" }
+    // ];
+
+    // const fetchData = async() => {
+    //   const response = await axios.get("https://dummyjson.com/todos");
+    //   setTodos(response.data.todos)
+    // };
+
+    useEffect(()=>{
+      const getData = async() => {
+        const data = await getTodos();
+        setTodos(data.todos)
+      }
+       getData();
+    }, [])
+
+    const updateNewTodo = (event) => {
+        
+        setNewTodo(event.target.value)
+    
+    }
+
+    const addTodo = () => {
+        const newData = {id:6, title:newTodo};
+        setTodos([...todos, newData])
+    }
+
+
+    return (
+      <div>
+        <h2>Todo List</h2>
+
+        <input
+          type="text"
+          placeholder="Todo Title"
+          value={newTodo}
+          onChange={updateNewTodo}
+        />
+
+        <button onClick={addTodo}>Save Todo</button>
+
+        <ul>
+          {todos.map((todo, index) => (
+            <li key={index}>
+              <Link to={`/todos/${todo.id}`}>{todo.todo}</Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+};
+
+export default TodoList;
+
+=================================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
