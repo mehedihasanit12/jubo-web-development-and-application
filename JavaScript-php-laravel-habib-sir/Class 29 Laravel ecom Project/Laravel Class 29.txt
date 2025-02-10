@@ -1,0 +1,185 @@
+10.02.2025
+-------------
+9:38 AM
+==========
+
+realated product
+
+------------------
+Java/C#, Python, PHP, Flutter - Mobile App Development
+
+====================================================================================================
+
+code execute--------
+
+build-- source code convert machine lang- 001010101110 .. operating system .. run program
+
+interpreate
+
+first- check syntax -- Parser-- syntax error
+if syntax ok then - build or interpreate.-- compiler-- Fatal error, warning, notice
+
+==================================================================================================
+
+10:10 AM
+-----------
+
+realated product
+
+==============
+
+websitecontroller
+--------------------
+
+public $product, $categoryProducts;
+    public function product($id)
+    {
+        $this->product = Product::find($id);
+        $this->categoryProducts = Product::where('category_id', $this->product->category_id)->latest()->get();
+        return view('website.product.index', [
+            'product' => $this->product,
+            'category_products' => $this->categoryProducts
+        ]);
+    }
+==============================================================================================
+{{isset($order->customer->name) ? $order->customer->name : ''}}
+-----------------------------------
+
+10:55 AM
+======
+break
+
+11:31 AM
+===========
+after break
+---------
+
+
+Resource Controller
+===============
+
+php artisan make:controller CourierController -r 
+
+php artisan make:model Courier -mcr
+
+=================================================================
+
+Courier
+==========
+
+Schema::create('couriers', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('email');
+            $table->string('mobile');
+            $table->text('address')->nullable();
+            $table->text('logo')->nullable();
+            $table->timestamps();
+        });
+
+
+=======================================================================
+
+php artisan route:list
+
+
+
+courier -- index, create view.
+
+
+============================================================================
+image packg
+===============
+https://intervention.io/
+========================================================================
+
+view data pass array, compact(), with().
+
+===========================================
+
+resource ---{{route('courier.edit', ['id' => $courier->id])}} ---
+            now ---- {{route('courier.edit',  $courier->id)}}
+
+{{route('courier.update', $courier->id)}}
+
+========================================================================
+
+PUT, PATCH Method 
+==================
+
+form data আংশিকভাবে আপডেট করতে -- PATCH 
+পুরো form data আপডেট করতে -- PUT
+
+=======================================================
+
+
+public function update(Request $request, Courier $courier)
+    {
+        Courier::updateCourier($request, $courier->id);
+        return redirect('/courier')->with('message', 'Courier info update successfully.');
+    }
+
+==================================================================================
+
+delete
+========================
+<form action="{{route('courier.destroy', $courier->id)}}" method="POST">
+                                        @method('DELETE')
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger btn-sm" onclick=" return confirm('Are you sure to delete this!')">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                    </form>
+
+
+======================================================================================================================
+
+form validation
+=================
+
+html,
+js,
+server lang- php(laravel)
+
+
+===========================================================
+$request->validate([
+           'name' => 'required',
+
+        ], [
+            'name' => 'Name required.'
+        ]);
+
+-----------------------------------------------------------------------------
+
+@error('title')
+         <span class="text-danger">{{ $message }}</span>
+ @enderror
+
+
+==============================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
