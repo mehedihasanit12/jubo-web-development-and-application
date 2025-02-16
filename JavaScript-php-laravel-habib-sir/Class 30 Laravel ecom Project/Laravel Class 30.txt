@@ -1,0 +1,157 @@
+16.02.2025
+------------
+9:45 AM
+===============
+
+order edit courier select dynamic.
+=====================================================
+
+10:22 AM
+-----------
+User module
+=============
+
+
+user resource controller
+
+php artisan make:controller UserController -r
+----------------------------------------------------------
+
+after jamela in 3 diploma course
+
+12:18 PM
+=========
+
+
+
+php artisan make:migration add_mobile_column_to_users_table --table=users
+
+user index, create view file create
+
+--------------------------------------------------------------------------------------------
+user model
+-----------
+public static $user, $image, $imageName, $imageUrl, $directory;
+
+    public static function getImageUrl($request)
+    {
+        self::$image = $request->file('image');
+        self::$imageName = self::$image->getClientOriginalName();
+        self::$directory = 'upload/user-images/';
+        self::$image->move(self::$directory, self::$imageName);
+        self::$imageUrl = self::$directory.self::$imageName;
+        return self::$imageUrl;
+    }
+
+    public static function newUser($request)
+    {
+        self::$user = new User();
+        self::$user->name = $request->name;
+        self::$user->email = $request->email;
+        self::$user->password = bcrypt($request->password);
+        if ($request->file('image'))
+        {
+            self::$user->profile_photo_path = self::getImageUrl($request);
+        }
+        self::$user->mobile = $request->mobile;
+        self::$user->save();
+    }
+
+    public static function updateUser($request, $id)
+    {
+        self::$user = User::find($id);
+
+        if ($request->file('image'))
+        {
+            self::$imageUrl = self::getImageUrl($request);
+        }
+        else
+        {
+            self::$imageUrl = self::$user->profile_photo_path;
+        }
+
+        self::$user->name = $request->name;
+        self::$user->email = $request->email;
+        if ($request->password)
+        {
+            self::$user->password = bcrypt($request->password);
+        }
+        self::$user->image = self::$imageUrl;
+        self::$user->mobile = $request->mobile;
+        self::$user->save();
+    }
+
+    public static function deleteUser($id)
+    {
+        self::$user = User::find($id);
+
+        if (self::$user->profile_photo_path)
+        {
+            unlink(self::$user->profile_photo_path);
+        }
+        self::$user->delete();
+    }
+
+============================================================================================================
+after lanch
+=============
+
+2:38 PM
+==========
+
+user edit, update ,delete
+-------------------------------
+
+<form style="display: inline" action="{{route('user.destroy', $user->id)}}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-sm" onclick=" return confirm('Are you sure to delete this!')">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                    </form>
+=============================================================================
+
+Database-> Factories, seeder
+=========================
+
+userfactory
+database seeder
+
+------------------------
+
+php artisan db:seed
+
+php artisan make:factory BrandFactory
+'name'      => fake()->name(),
+            'status'    => rand(0,1),
+            'description' => Str::random(20),
+            'image'       => 'http://localhost/niyd-ecom/public/admin/assets/img/avatars/1.png'
+
+===========================================================================================
+
+middleware
+-------------
+create , register, use
+
+php artisan make:middleware CustomerMiddleware
+
+-------------------------------------
+next class- middleware.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
