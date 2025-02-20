@@ -1,0 +1,163 @@
+
+
+.hero-bg{
+    background-image: url('../img/Hero.png');
+    background-position: center;
+    background-size: cover;
+}
+
+
+
+.left-menu ul{
+    display: flex;
+}
+
+.left-menu li{
+    list-style: none;
+    margin-left: 20px;
+
+}
+
+.left-menu li a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+
+
+.right-menu ul{
+    display: flex;
+}
+
+.right-menu li{
+    list-style: none;
+    margin-left: 20px;
+
+}
+
+.right-menu li a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.menu-btn{
+    background-color: #344AEE;
+    padding: 10px 50px;
+    border-radius: 20px;
+    color: white !important;
+}
+
+/* hero section */
+
+
+.hero-section-inner{
+    text-align: right;
+    padding-bottom: 40px;
+}
+
+.hero-section-inner h1{
+    color: black;
+    font-size: 73px;
+    font-weight: 900;
+    margin-bottom: 52px;
+}
+
+.hero-btn{
+    text-decoration: none;
+    background-color: #F2F2F2;
+    padding: 10px 50px;
+    border-radius: 20px;
+    color: #3A4344;
+}
+
+
+/* highlight section */
+
+.highlight-section{
+    background-image: url('../img/Highlight\ area.png');
+
+}
+
+.highlight-logo{
+    position: relative;
+    top: -73px;
+}
+
+/* design section */
+
+.design-section{
+
+}
+
+.design-section-bg{
+    background-image: url('../img/human.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.design-section-inner{
+    margin-left: 50px;
+}
+
+/* approach section */
+
+.approach-section{
+    padding: 14rem !important ;
+    margin-top: 40px ;
+    background-image: url('../img/Rectangle\ 8.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.approach-cot{
+    background-image: url('../img/Quote.png');
+    background-position: center;
+    background-size: cover;
+    padding: 8rem !important ;
+    color: white;
+}
+
+.approach-content{
+    padding-top: 30px ;
+    margin-left: 74px;
+}
+
+.approach-content h1{
+    margin-bottom: 30px;
+    font-weight: 900;
+}
+
+/* campaign section */
+
+.campaign-left{
+
+}
+
+.campaign-left h1{
+    font-weight: 900;
+}
+
+.campaign-left p{
+    font-weight: 500;
+}
+
+
+
+/* design feedback */
+
+
+
+.design-feedback-section{
+    background-color: #FCFCFC;
+}
+
+.design-feedback-section h1{
+    margin-top: 50px;
+    font-weight: 900;
+}
+
+.design-feedback-section p{
+    font-weight: 500;
+}
