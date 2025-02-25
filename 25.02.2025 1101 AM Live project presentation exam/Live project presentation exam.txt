@@ -1,0 +1,13 @@
+25.02.2025
+=============
+
+1. category unplished rakle show korbe na
+
+2. langues ar jonno alada module no need, category add languese
+
+3. form validation
+
+4. existing category add kora jabe na
+
+5. complete order edit kora jabe na
+
