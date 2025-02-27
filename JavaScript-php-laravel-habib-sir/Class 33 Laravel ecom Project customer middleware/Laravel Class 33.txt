@@ -1,0 +1,229 @@
+27.02.2025
+============
+9:42 AM
+
+=======================================
+
+website
+admin panel
+customer panel
+
+==============================================
+customer ar jonno alada login 
+
+public function index()
+    {
+        if (Session::get('id'))
+        {
+            return redirect('/customer/dashboard');
+        }
+        return view('customer.auth.index');
+    }
+
+    public function dashboard()
+    {
+        return view('customer.dashboard.index');
+    }
+
+==========================================================================
+
+public function loginCheck(Request $request)
+    {
+        $this->customer = Customer::where('email', $request->email)->first();
+        if ($this->customer)
+        {
+            if (password_verify($request->password, $this->customer->password))
+            {
+                Session::put('id', $this->customer->id);
+                Session::put('name', $this->customer->name);
+
+                return redirect('/customer/dashboard');
+            }
+            else
+            {
+                return back()->with('message', 'Invalid Password');
+            }
+        }
+        else
+        {
+            return back()->with('message', 'Invalid Email Address');
+        }
+    }
+
+===============================================================================
+
+Route::post('/customer/login', [CustomerAuthController::class, 'loginCheck'])->name('customer.login');
+Route::get('/customer/dashboard', [CustomerAuthController::class, 'dashboard'])->name('customer.dashboard');
+
+customer dashboard
+===================
+php artisan make:controller CustomerDashboardController
+
+=====================
+
+customer dashboard controller
+-------------------------------
+
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class CustomerDashboardController extends Controller
+{
+    public function profile()
+    {
+        return view('customer.profile.index');
+    }
+
+    public function order()
+    {
+        return view('customer.order.index');
+    }
+
+    public function wishlist()
+    {
+        return view('customer.wishlist.index');
+    }
+
+    public function changePassword()
+    {
+        return view('customer.change-password.index');
+    }
+}
+==============================================================
+
+customer dashboard route
+===========================
+
+Route::get('/customer/dashboard', [CustomerAuthController::class, 'dashboard'])->name('customer.dashboard');
+Route::get('/customer/profile', [CustomerDashboardController::class, 'profile'])->name('customer.profile');
+Route::get('/customer/order', [CustomerDashboardController::class, 'order'])->name('customer.order');
+Route::get('/customer/wishlist', [CustomerDashboardController::class, 'wishlist'])->name('customer.wishlist');
+Route::get('/customer/change-password', [CustomerDashboardController::class, 'changePassword'])->name('customer.change-password');
+
+=============================================
+
+10:54 AM
+==========
+
+route ar name dekha
+-------------------
+\Request::route()->getName();
+
+logic
+-------
+
+{{\Request::route()->getName() == 'customer.change-password' ? 'active' : '' }}
+
+===================================
+customer -> includes - menu.blade.php
+
+------------------
+
+@include('customer.includes.menu')
+
+==============================================================================
+
+11:49 AM
+===========
+
+controller class - logic
+model class - data
+Provider class- globally data share
+middleware class - security
+
+-----------------------------------
+
+route secure with middleware
+=================================
+
+
+php artisan make:middleware CustomerMiddleware
+
+
+------------------------------
+middleware register
+------------------
+
+laravel version 7,8,9,10 app-> http
+
+laravel 11 -> bootstrapp -> app.php
+
+=================================
+middleware register
+---------------------
+
+$middleware->alias([
+            'customer' => CustomerMiddleware::class
+        ]);
+=====================
+mmiddleware use
+----------------
+
+Route::get('/customer/dashboard', [CustomerAuthController::class, 'dashboard'])->name('customer.dashboard')->middleware('customer');
+
+
+middleware group
+------------------
+
+Route::middleware(['customer'])->group(function () {
+    Route::get('/customer/dashboard', [CustomerAuthController::class, 'dashboard'])->name('customer.dashboard');
+    Route::get('/customer/profile', [CustomerDashboardController::class, 'profile'])->name('customer.profile');
+    Route::get('/customer/order', [CustomerDashboardController::class, 'order'])->name('customer.order');
+    Route::get('/customer/wishlist', [CustomerDashboardController::class, 'wishlist'])->name('customer.wishlist');
+    Route::get('/customer/change-password', [CustomerDashboardController::class, 'changePassword'])->name('customer.change-password');
+});
+
+==================================================================================
+
+customer register
+--------------------
+
+public function register(Request $request)
+    {
+        $this->customer = Customer::newCustomer($request);
+        Session::put('id', $this->customer->id);
+        Session::put('name', $this->customer->name);
+        return redirect('/customer/dashboard');
+    }
+====================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
