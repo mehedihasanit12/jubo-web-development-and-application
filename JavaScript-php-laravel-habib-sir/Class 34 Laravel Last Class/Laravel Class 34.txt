@@ -1,0 +1,187 @@
+02.03.2025
+----------
+10:09 AM
+----------
+
+Category- id, name,image , descri, status
+Course - id, category_id, title, short desc, long des, image,course duration
+Instructor-
+Batch-
+Admission-
+Student-
+Staff-
+About-
+
+=================================================================================
+
+Javascript Process - AJAX
+==========================
+
+Client Request Handling Process
+
+Client - Server communication process
+
+	2 types of 1. Synchronize , Asynchronize
+
+
+Activexobject
+Xmlhttprequest
+
+
+5 step 
+
+1. server acnoledgement
+
+===============================================
+httdoc-> ajax-> index.php, server.php -> js -> script.js , jquery
+
+index.php
+============
+
+ <input type="text" id="input"/>
+    <hr>
+    <h1 id="res"></h1>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/script.js"></script>
+------------------------------------------------------------
+
+script.js
+=============
+$('#input').keyup(function () {
+    var inputValue = $(this).val();
+
+    $.ajax({
+        type: 'GET',
+        url: "server.php",
+        data: {"value" : inputValue, test: "demo"},
+        DataType: "JSON",
+        success: function (response) {
+            $('#res').text(response);
+        }
+    });
+});
+
+---------------------------------------------------
+
+server.php
+============
+
+<?php
+
+echo $_GET['value'];
+
+
+======================================
+
+plus - minus ajax
+-----------------
+
+$('#plusBtn').click(function () {
+    var inputNumber = $('#number').val();
+
+    $.ajax({
+        type: 'GET',
+        url: "server.php",
+        data: { given_input : inputNumber, action : 'add'},
+        DataType: "JSON",
+        success: function (response) {
+            console.log(response);
+            $('#number').val(response);
+        }
+    });
+});
+$('#minusBtn').click(function () {
+    var inputNumber = $('#number').val();
+
+    $.ajax({
+        type: 'GET',
+        url: "server.php",
+        data: { given_input : inputNumber, action : 'minus'},
+        DataType: "JSON",
+        success: function (response) {
+            console.log(response);
+            $('#number').val(response);
+        }
+    });
+});
+
+------------------------------------------------------------------------------
+<?php
+
+
+if ($_GET['action'] == 'add')
+{
+    echo $_GET['given_input']+ 1;
+}
+
+elseif ($_GET['action'] == 'minus')
+{
+    echo $_GET['given_input'] - 1;
+}
+
+
+-------------------------------------------------------------------------------------------
+
+<div>
+        <button type="button" id="minusBtn"> - </button>
+        <input type="number" value="0" id="number">
+        <button type="button" id="plusBtn"> + </button>
+    </div>
+
+----------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
