@@ -1,0 +1,31 @@
+
+/* Navbar section */
+
+.navbar-section{
+    background-color: #671688;
+}
+
+.navbar-section ul{
+    display: flex;
+    padding: 20px 0px;
+}
+
+.navbar-section ul li{
+    list-style: none;
+    margin-left: 15px;
+    padding-right: 20px;
+    border-right: 1px solid white;
+}
+
+.navbar-section ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+.navbar-section ul li a i{
+    margin-right: 5px;
+}
+
+.menu-btn ul li{
+    border-right: 0px;
+}
